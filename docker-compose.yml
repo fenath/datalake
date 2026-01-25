@@ -1,0 +1,24 @@
+services:
+  minio:
+    image: quay.io/minio/minio:latest
+    container_name: minio
+    environment:
+      # Set your desired root user and password
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+      # Optional: automatically create a default bucket on startup
+      MINIO_DEFAULT_BUCKETS: my-first-bucket
+    ports:
+      # API port (e.g., for S3 clients)
+      - "9000:9000"
+      # Console UI port (e.g., for browser access)
+      - "9090:9090"
+    volumes:
+      # Persist data to a local volume named 'minio_data'
+      - minio_data:/data
+    command: >
+      server --console-address ":9090" /data
+
+# Define the volume for persistent data
+volumes:
+  minio_data:
