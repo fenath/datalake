@@ -18,6 +18,7 @@ Artigos utilizados para realizar o projeto:
 - Streamlining Big Data with Spark: Writing and Reading Delta Lake Format on MinIO-S3 Storage - medium 
 - Setting Up Trino with Hive to Query Delta Lake Data on MinIO: A Scalable Big Data Solution
 - https://www.datalib.com.br/post/como-instalar-um-cluster-do-apache-spark-no-docker-desktop-utilizando-compose
+- https://blog.min.io/a-developers-introduction-to-apache-iceberg-using-minio/
 
 Vou tentar colocar tudo em container docker
 
