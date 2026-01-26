@@ -18,6 +18,8 @@ services:
       - minio_data:/data
     command: >
       server --console-address ":9090" /data
+    networks:
+      - spark-net
 
   iceberg:
     image: tabulario/iceberg-rest:latest
@@ -31,6 +33,16 @@ services:
       AWS_REGION: us-east-1
       S3_ENDPOINT: http://minio:9000
       S3_PATH_STYLE_ACCESS: "true"
+      # === Catálogo JDBC (Postgres) ===
+      CATALOG_CATALOG__IMPL: org.apache.iceberg.jdbc.JdbcCatalog
+      CATALOG_URI: jdbc:postgresql://db:5432/iceberg
+      CATALOG_JDBC_USER: iceberg
+      CATALOG_JDBC_PASSWORD: iceberg
+    networks:
+      - spark-net
+    depends_on:
+      - db
+      - minio
 
   trino:
     image: trinodb/trino:latest
@@ -40,8 +52,69 @@ services:
     depends_on:
       - iceberg
       - minio
+    networks:
+      - spark-net
     volumes:
       - ./trino/catalog:/etc/trino/catalog
+
+  db:
+    image: postgres:14
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: iceberg
+      POSTGRES_USER: iceberg
+      POSTGRES_PASSWORD: iceberg
+    networks:
+      - spark-net
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  spark-master:
+    image: apache/spark:3.5.0
+    hostname: spark-master
+    command: bash -c "/opt/spark/bin/spark-class org.apache.spark.deploy.master.Master"
+    ports:
+      - "7077:7077"   # Porta para comunicação com workers
+      - "8082:8080"   # UI do Spark Master
+    environment:
+      - SPARK_HOME=/opt/spark
+    networks:
+      - spark-net
+
+  spark-worker:
+    image: apache/spark:3.5.0
+    # hostname: spark-worker-1
+    command: bash -c "/opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077"
+    depends_on:
+      - spark-master
+    ports:
+      - "8081:8081"   # UI do Spark Worker 1
+    environment:
+      - SPARK_HOME=/opt/spark
+    networks:
+      - spark-net
+
+  #Parte 2 - Adicionando o Jupyter + Spark
+  jupyter:
+    image: jupyter/all-spark-notebook:latest
+    container_name: jupyter
+    hostname: jupyter
+    ports:
+      - "8888:8888"
+    environment:
+      - SPARK_HOME=/usr/local/spark
+    volumes:
+      - ./notebooks:/home/jovyan/work
+      - ./notebooks/spark-defaults.conf:/usr/local/spark/conf/spark-defaults.conf
+    depends_on:
+      - spark-master
+    networks:
+      - spark-net
+
+networks:
+  spark-net:
+    driver: bridge
 
 # Define the volume for persistent data
 volumes:

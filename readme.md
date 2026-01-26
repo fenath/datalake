@@ -14,6 +14,9 @@ conceito S3 no minio
 
 Criação de um datalake
 
-Artigos utilizados para realizar o projeto: Streamlining Big Data with Spark: Writing and Reading Delta Lake Format on MinIO-S3 Storage - medium Setting Up Trino with Hive to Query Delta Lake Data on MinIO: A Scalable Big Data Solution
+Artigos utilizados para realizar o projeto: 
+- Streamlining Big Data with Spark: Writing and Reading Delta Lake Format on MinIO-S3 Storage - medium 
+- Setting Up Trino with Hive to Query Delta Lake Data on MinIO: A Scalable Big Data Solution
+- https://www.datalib.com.br/post/como-instalar-um-cluster-do-apache-spark-no-docker-desktop-utilizando-compose
 
 Vou tentar colocar tudo em container docker
