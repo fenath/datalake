@@ -10,6 +10,7 @@ services:
     volumes:
       - ./warehouse:/home/iceberg/warehouse
       - ./notebooks:/home/iceberg/notebooks/notebooks
+      - ./notebooks/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf
     environment:
       - AWS_ACCESS_KEY_ID=minioadmin
       - AWS_SECRET_ACCESS_KEY=minioadmin
