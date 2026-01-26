@@ -82,6 +82,8 @@ services:
     depends_on:
       - rest
       - minio
+    networks:
+      - iceberg_net
     volumes:
       - ./trino/catalog:/etc/trino/catalog
 
@@ -93,6 +95,8 @@ services:
       POSTGRES_DB: iceberg
       POSTGRES_USER: iceberg
       POSTGRES_PASSWORD: iceberg
+    networks:
+      - iceberg_net
     volumes:
       - pgdata:/var/lib/postgresql/data
 
