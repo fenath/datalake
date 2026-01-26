@@ -20,3 +20,34 @@ Artigos utilizados para realizar o projeto:
 - https://www.datalib.com.br/post/como-instalar-um-cluster-do-apache-spark-no-docker-desktop-utilizando-compose
 
 Vou tentar colocar tudo em container docker
+
+
+Testar o jupyter:
+
+
+from pyspark.sql import SparkSession
+
+# O catálogo 'iceberg' já está configurado no spark-defaults.conf
+spark = SparkSession.builder.getOrCreate()
+
+# Criar namespace (database)
+spark.sql("CREATE NAMESPACE IF NOT EXISTS iceberg.db")
+
+# Criar tabela
+spark.sql("""
+CREATE TABLE IF NOT EXISTS iceberg.db.teste (
+  id bigint,
+  nome string
+) USING iceberg
+""")
+
+# Inserir dados de teste
+spark.sql("""
+INSERT INTO iceberg.db.teste VALUES 
+  (1, 'Alice'),
+  (2, 'Bob'),
+  (3, 'Carlos')
+""")
+
+# Consultar
+spark.sql("SELECT * FROM iceberg.db.teste").show()
