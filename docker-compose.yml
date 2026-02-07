@@ -88,6 +88,29 @@ services:
     volumes:
       - ./trino/catalog:/etc/trino/catalog
 
+  metabase:
+    image: metabase/metabase:latest
+    container_name: metabase
+    hostname: metabase
+    depends_on:
+      - db
+    ports:
+      - 3000:3000
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_DBNAME: metabase_db
+      MB_DB_PORT: 5432
+      MB_DB_USER: iceberg
+      MB_DB_PASS: iceberg
+      MB_DB_HOST: db
+    networks:
+      - iceberg_net
+    healthcheck:
+      test: curl --fail -I http://localhost:3000/api/health || exit 1
+      interval: 15s
+      timeout: 5s
+      retries: 5
+
   db:
     image: postgres:14
     ports:
