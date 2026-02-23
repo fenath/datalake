@@ -1,0 +1,113 @@
+2026-02-20 22:57:38 +0000 - dagster - DEBUG - crypto_ingestion_job - cf0e2b6b-de89-44bb-bb7f-bcc374bbd779 - 69255 - LOGS_CAPTURED - Started capturing logs in process (pid: 69255).
+2026-02-20 22:57:38 +0000 - dagster - DEBUG - crypto_ingestion_job - cf0e2b6b-de89-44bb-bb7f-bcc374bbd779 - 69255 - ingest_crypto_file_op - STEP_START - Started execution of step "ingest_crypto_file_op".
+2026-02-20 22:57:38 +0000 - dagster - INFO - crypto_ingestion_job - cf0e2b6b-de89-44bb-bb7f-bcc374bbd779 - ingest_crypto_file_op - Ingestando BTCUSDT (5m) do caminho: cryptocurrency/BTCUSDT-5m-2024-04.csv
+2026-02-20 22:57:38 +0000 - dagster - INFO - crypto_ingestion_job - cf0e2b6b-de89-44bb-bb7f-bcc374bbd779 - ingest_crypto_file_op - Ingesting cryptocurrency/BTCUSDT-5m-2024-04.csv
+2026-02-20 22:57:38 +0000 - dagster - INFO - crypto_ingestion_job - cf0e2b6b-de89-44bb-bb7f-bcc374bbd779 - ingest_crypto_file_op - shape: (10, 14)
+┌────────────┬────────────┬────────────┬────────────┬───┬────────────┬─────┬───────────┬───────────┐
+│ 1711929600 ┆ 71280.0000 ┆ 71288.2300 ┆ 71107.7100 ┆ … ┆ 8736309.40 ┆ 0   ┆ _source_f ┆ _ingestio │
+│ 000        ┆ 0000       ┆ 0000       ┆ 0000       ┆   ┆ 227420     ┆ --- ┆ ile       ┆ n_time    │
+│ ---        ┆ ---        ┆ ---        ┆ ---        ┆   ┆ ---        ┆ i64 ┆ ---       ┆ ---       │
+│ i64        ┆ f64        ┆ f64        ┆ f64        ┆   ┆ f64        ┆     ┆ str       ┆ str       │
+╞════════════╪════════════╪════════════╪════════════╪═══╪════════════╪═════╪═══════════╪═══════════╡
+│ 1711929900 ┆ 71233.42   ┆ 71236.5    ┆ 71115.73   ┆ … ┆ 2.3580e6   ┆ 0   ┆ cryptocur ┆ 2026-02-2 │
+│ 000        ┆            ┆            ┆            ┆   ┆            ┆     ┆ rency/BTC ┆ 0T22:57:3 │
+│            ┆            ┆            ┆            ┆   ┆            ┆     ┆ USDT-5m-2 ┆ 8.678707+ │
+│            ┆            ┆            ┆            ┆   ┆            ┆     ┆ 024…      ┆ 00:…      │
+│ 1711930200 ┆ 71194.0    ┆ 71194.0    ┆ 71124.0    ┆ … ┆ 1.8344e6   ┆ 0   ┆ cryptocur ┆ 2026-02-2 │
+│ 000        ┆            ┆            ┆            ┆   ┆            ┆     ┆ rency/BTC ┆ 0T22:57:3 │
+│            ┆            ┆            ┆            ┆   ┆            ┆     ┆ USDT-5m-2 ┆ 8.678707+ │
+│            ┆            ┆            ┆            ┆   ┆            ┆     ┆ 024…      ┆ 00:…      │
+│ 1711930500 ┆ 71140.0    ┆ 71184.3    ┆ 71102.0    ┆ … ┆ 2.3662e6   ┆ 0   ┆ cryptocur ┆ 2026-02-2 │
+│ 000        ┆            ┆            ┆            ┆   ┆            ┆     ┆ rency/BTC ┆ 0T22:57:3 │
+│            ┆            ┆            ┆            ┆   ┆            ┆     ┆ USDT-5m-2 ┆ 8.678707+ │
+│            ┆            ┆            ┆            ┆   ┆            ┆     ┆ 024…      ┆ 00:…      │
+│ 1711930800 ┆ 71184.3    ┆ 71184.3    ┆ 71152.49   ┆ … ┆ 3.1657e6   ┆ 0   ┆ cryptocur ┆ 2026-02-2 │
+│ 000        ┆            ┆            ┆            ┆   ┆            ┆     ┆ rency/BTC ┆ 0T22:57:3 │
+│            ┆            ┆            ┆            ┆   ┆            ┆     ┆ USDT-5m-2 ┆ 8.678707+ │
+│            ┆            ┆            ┆            ┆   ┆            ┆     ┆ 024…      ┆ 00:…      │
+│ 1711931100 ┆ 71181.21   ┆ 71181.22   ┆ 71065.4    ┆ … ┆ 2.4960e6   ┆ 0   ┆ cryptocur ┆ 2026-02-2 │
+│ 000        ┆            ┆            ┆            ┆   ┆            ┆     ┆ rency/BTC ┆ 0T22:57:3 │
+│            ┆            ┆            ┆            ┆   ┆            ┆     ┆ USDT-5m-2 ┆ 8.678707+ │
+│            ┆            ┆            ┆            ┆   ┆            ┆     ┆ 024…      ┆ 00:…      │
+│ 1711931400 ┆ 71077.99   ┆ 71117.82   ┆ 71061.05   ┆ … ┆ 1.9622e6   ┆ 0   ┆ cryptocur ┆ 2026-02-2 │
+│ 000        ┆            ┆            ┆            ┆   ┆            ┆     ┆ rency/BTC ┆ 0T22:57:3 │
+│            ┆            ┆            ┆            ┆   ┆            ┆     ┆ USDT-5m-2 ┆ 8.678707+ │
+│            ┆            ┆            ┆            ┆   ┆            ┆     ┆ 024…      ┆ 00:…      │
+│ 1711931700 ┆ 71079.12   ┆ 71079.12   ┆ 70983.63   ┆ … ┆ 1.9294e6   ┆ 0   ┆ cryptocur ┆ 2026-02-2 │
+│ 000        ┆            ┆            ┆            ┆   ┆            ┆     ┆ rency/BTC ┆ 0T22:57:3 │
+│            ┆            ┆            ┆            ┆   ┆            ┆     ┆ USDT-5m-2 ┆ 8.678707+ │
+│            ┆            ┆            ┆            ┆   ┆            ┆     ┆ 024…      ┆ 00:…      │
+│ 1711932000 ┆ 71016.27   ┆ 71016.27   ┆ 70844.14   ┆ … ┆ 3.2754e6   ┆ 0   ┆ cryptocur ┆ 2026-02-2 │
+│ 000        ┆            ┆            ┆            ┆   ┆            ┆     ┆ rency/BTC ┆ 0T22:57:3 │
+│            ┆            ┆            ┆            ┆   ┆            ┆     ┆ USDT-5m-2 ┆ 8.678707+ │
+│            ┆            ┆            ┆            ┆   ┆            ┆     ┆ 024…      ┆ 00:…      │
+│ 1711932300 ┆ 70919.75   ┆ 71065.99   ┆ 70880.0    ┆ … ┆ 6.1643e6   ┆ 0   ┆ cryptocur ┆ 2026-02-2 │
+│ 000        ┆            ┆            ┆            ┆   ┆            ┆     ┆ rency/BTC ┆ 0T22:57:3 │
+│            ┆            ┆            ┆            ┆   ┆            ┆     ┆ USDT-5m-2 ┆ 8.678707+ │
+│            ┆            ┆            ┆            ┆   ┆            ┆     ┆ 024…      ┆ 00:…      │
+│ 1711932600 ┆ 71050.89   ┆ 71060.0    ┆ 71000.01   ┆ … ┆ 2.2694e6   ┆ 0   ┆ cryptocur ┆ 2026-02-2 │
+│ 000        ┆            ┆            ┆            ┆   ┆            ┆     ┆ rency/BTC ┆ 0T22:57:3 │
+│            ┆            ┆            ┆            ┆   ┆            ┆     ┆ USDT-5m-2 ┆ 8.678707+ │
+│            ┆            ┆            ┆            ┆   ┆            ┆     ┆ 024…      ┆ 00:…      │
+└────────────┴────────────┴────────────┴────────────┴───┴────────────┴─────┴───────────┴───────────┘
+2026-02-20 22:57:39 +0000 - dagster - ERROR - crypto_ingestion_job - cf0e2b6b-de89-44bb-bb7f-bcc374bbd779 - 69255 - ingest_crypto_file_op - STEP_FAILURE - Execution of step "ingest_crypto_file_op" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "ingest_crypto_file_op"::
+
+ValueError: PyArrow table contains more columns: 0, 122.72836000, 16584854.05321040, 1711929600000, 1711929899999, 232.96082000, 71107.71000000, 71233.42000000, 71280.00000000, 71288.23000000, 8736309.40227420, 9425. Update the schema first (hint, use union_by_name).
+
+Stack Trace:
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/project/crypto_candles/assets/ops.py", line 48, in ingest_crypto_file_op
+    table.overwrite(
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/table/__init__.py", line 1469, in overwrite
+    tx.overwrite(
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/table/__init__.py", line 630, in overwrite
+    _check_pyarrow_schema_compatible(
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py", line 2745, in _check_pyarrow_schema_compatible
+    raise ValueError(
+
+The above exception was caused by the following exception:
+ValueError: Could not find field with name: 1711929600000
+
+Stack Trace:
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py", line 2734, in _check_pyarrow_schema_compatible
+    provided_schema = pyarrow_to_schema(
+                      ^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py", line 1139, in pyarrow_to_schema
+    return apply_name_mapping(schema_without_ids, name_mapping)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/table/name_mapping.py", line 378, in apply_name_mapping
+    return visit_with_partner(schema_without_ids, name_mapping, NameMappingProjectionVisitor(), NameMappingAccessor())  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/functools.py", line 912, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/schema.py", line 662, in _
+    return visitor.schema(schema, partner, visit_with_partner(schema.as_struct(), struct_partner, visitor, accessor))  # type: ignore
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/functools.py", line 912, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/schema.py", line 672, in _
+    field_result = visit_with_partner(field.field_type, field_partner, visitor, accessor)  # type: ignore
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/functools.py", line 912, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/schema.py", line 712, in _
+    return visitor.primitive(primitive, partner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/table/name_mapping.py", line 372, in primitive
+    raise ValueError(f"Could not find field with name: {'.'.join(self.current_path)}")
+

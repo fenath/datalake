@@ -1,0 +1,9 @@
+2026-02-20 22:32:49 +0000 - dagster - DEBUG - crypto_ingestion_job - 0bf1dc79-7042-47ad-84de-e57e46f01a96 - 51192 - LOGS_CAPTURED - Started capturing logs in process (pid: 51192).
+2026-02-20 22:32:49 +0000 - dagster - DEBUG - crypto_ingestion_job - 0bf1dc79-7042-47ad-84de-e57e46f01a96 - 51192 - ingest_crypto_file_op - STEP_START - Started execution of step "ingest_crypto_file_op".
+2026-02-20 22:32:49 +0000 - dagster - INFO - crypto_ingestion_job - 0bf1dc79-7042-47ad-84de-e57e46f01a96 - ingest_crypto_file_op - Ingestando BTCUSDT (5m) do caminho: cryptocurrency/BTCUSDT-5m-2025-08.csv
+2026-02-20 22:32:49 +0000 - dagster - INFO - crypto_ingestion_job - 0bf1dc79-7042-47ad-84de-e57e46f01a96 - ingest_crypto_file_op - Ingesting cryptocurrency/BTCUSDT-5m-2025-08.csv
+2026-02-20 22:32:55 +0000 - dagster - INFO - crypto_ingestion_job - 0bf1dc79-7042-47ad-84de-e57e46f01a96 - ingest_crypto_file_op - ✔ RAW ingestão concluída
+2026-02-20 22:32:55 +0000 - dagster - DEBUG - crypto_ingestion_job - 0bf1dc79-7042-47ad-84de-e57e46f01a96 - 51192 - ingest_crypto_file_op - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2026-02-20 22:32:55 +0000 - dagster - DEBUG - crypto_ingestion_job - 0bf1dc79-7042-47ad-84de-e57e46f01a96 - ingest_crypto_file_op - Writing file at: /opt/dagster/dagster_home/storage/0bf1dc79-7042-47ad-84de-e57e46f01a96/ingest_crypto_file_op/result using PickledObjectFilesystemIOManager...
+2026-02-20 22:32:55 +0000 - dagster - DEBUG - crypto_ingestion_job - 0bf1dc79-7042-47ad-84de-e57e46f01a96 - 51192 - ingest_crypto_file_op - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2026-02-20 22:32:55 +0000 - dagster - DEBUG - crypto_ingestion_job - 0bf1dc79-7042-47ad-84de-e57e46f01a96 - 51192 - ingest_crypto_file_op - STEP_SUCCESS - Finished execution of step "ingest_crypto_file_op" in 5.61s.

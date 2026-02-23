@@ -1,0 +1,28 @@
+2026-02-20 22:32:54 +0000 - dagster - DEBUG - crypto_ingestion_job - a4b1851c-4310-413a-9b34-facf7fd62446 - 51266 - LOGS_CAPTURED - Started capturing logs in process (pid: 51266).
+2026-02-20 22:32:54 +0000 - dagster - DEBUG - crypto_ingestion_job - a4b1851c-4310-413a-9b34-facf7fd62446 - 51266 - silver_crypto - STEP_START - Started execution of step "silver_crypto".
+2026-02-20 22:32:54 +0000 - dagster - DEBUG - crypto_ingestion_job - a4b1851c-4310-413a-9b34-facf7fd62446 - silver_crypto - Loading file from: /opt/dagster/dagster_home/storage/a4b1851c-4310-413a-9b34-facf7fd62446/ingest_crypto_file_op/result using PickledObjectFilesystemIOManager...
+2026-02-20 22:32:54 +0000 - dagster - DEBUG - crypto_ingestion_job - a4b1851c-4310-413a-9b34-facf7fd62446 - 51266 - silver_crypto - LOADED_INPUT - Loaded input "bronze_metadata" using input manager "io_manager", from output "result" of step "ingest_crypto_file_op"
+2026-02-20 22:32:54 +0000 - dagster - DEBUG - crypto_ingestion_job - a4b1851c-4310-413a-9b34-facf7fd62446 - 51266 - silver_crypto - STEP_INPUT - Got input "bronze_metadata" of type "Any". (Type check passed).
+2026-02-20 22:32:54 +0000 - dagster - INFO - crypto_ingestion_job - a4b1851c-4310-413a-9b34-facf7fd62446 - silver_crypto - Iniciando tratamento Silver para BTCUSDT
+2026-02-20 22:32:54 +0000 - dagster - ERROR - crypto_ingestion_job - a4b1851c-4310-413a-9b34-facf7fd62446 - 51266 - silver_crypto - STEP_FAILURE - Execution of step "silver_crypto" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "silver_crypto"::
+
+TypeError: Table.scan() got an unexpected keyword argument 'filter'
+
+Stack Trace:
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/project/crypto_candles/assets/ops.py", line 71, in silver_crypto
+    table = table.scan(
+            ^^^^^^^^^^^
+

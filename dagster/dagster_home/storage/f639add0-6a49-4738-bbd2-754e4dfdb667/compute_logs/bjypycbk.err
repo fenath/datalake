@@ -1,0 +1,24 @@
+2026-02-20 19:58:42 +0000 - dagster - DEBUG - __ASSET_JOB - f639add0-6a49-4738-bbd2-754e4dfdb667 - 54164 - LOGS_CAPTURED - Started capturing logs in process (pid: 54164).
+2026-02-20 19:58:42 +0000 - dagster - DEBUG - __ASSET_JOB - f639add0-6a49-4738-bbd2-754e4dfdb667 - 54164 - bronze_crypto_candles - STEP_START - Started execution of step "bronze_crypto_candles".
+2026-02-20 19:58:42 +0000 - dagster - DEBUG - __ASSET_JOB - f639add0-6a49-4738-bbd2-754e4dfdb667 - bronze_crypto_candles - Loading file from: /opt/dagster/dagster_home/storage/raw_crypto_files using PickledObjectFilesystemIOManager...
+2026-02-20 19:58:43 +0000 - dagster - DEBUG - __ASSET_JOB - f639add0-6a49-4738-bbd2-754e4dfdb667 - 54164 - bronze_crypto_candles - LOADED_INPUT - Loaded input "raw_crypto_files" using input manager "io_manager"
+2026-02-20 19:58:43 +0000 - dagster - DEBUG - __ASSET_JOB - f639add0-6a49-4738-bbd2-754e4dfdb667 - 54164 - bronze_crypto_candles - STEP_INPUT - Got input "raw_crypto_files" of type "Any". (Type check passed).
+2026-02-20 19:58:43 +0000 - dagster - INFO - __ASSET_JOB - f639add0-6a49-4738-bbd2-754e4dfdb667 - bronze_crypto_candles - Ingesting cryptocurrency/BTCUSDT-5m-2026-01.csv
+2026-02-20 19:58:45 +0000 - dagster - INFO - __ASSET_JOB - f639add0-6a49-4738-bbd2-754e4dfdb667 - bronze_crypto_candles - Ingesting cryptocurrency/BTCUSDT-5m-2025-01.csv
+2026-02-20 19:58:46 +0000 - dagster - INFO - __ASSET_JOB - f639add0-6a49-4738-bbd2-754e4dfdb667 - bronze_crypto_candles - Ingesting cryptocurrency/BTCUSDT-5m-2025-02.csv
+2026-02-20 19:58:47 +0000 - dagster - INFO - __ASSET_JOB - f639add0-6a49-4738-bbd2-754e4dfdb667 - bronze_crypto_candles - Ingesting cryptocurrency/BTCUSDT-5m-2025-03.csv
+2026-02-20 19:58:49 +0000 - dagster - INFO - __ASSET_JOB - f639add0-6a49-4738-bbd2-754e4dfdb667 - bronze_crypto_candles - Ingesting cryptocurrency/BTCUSDT-5m-2025-04.csv
+2026-02-20 19:58:51 +0000 - dagster - INFO - __ASSET_JOB - f639add0-6a49-4738-bbd2-754e4dfdb667 - bronze_crypto_candles - Ingesting cryptocurrency/BTCUSDT-5m-2025-05.csv
+2026-02-20 19:58:52 +0000 - dagster - INFO - __ASSET_JOB - f639add0-6a49-4738-bbd2-754e4dfdb667 - bronze_crypto_candles - Ingesting cryptocurrency/BTCUSDT-5m-2025-06.csv
+2026-02-20 19:58:54 +0000 - dagster - INFO - __ASSET_JOB - f639add0-6a49-4738-bbd2-754e4dfdb667 - bronze_crypto_candles - Ingesting cryptocurrency/BTCUSDT-5m-2025-07.csv
+2026-02-20 19:58:55 +0000 - dagster - INFO - __ASSET_JOB - f639add0-6a49-4738-bbd2-754e4dfdb667 - bronze_crypto_candles - Ingesting cryptocurrency/BTCUSDT-5m-2025-08.csv
+2026-02-20 19:58:56 +0000 - dagster - INFO - __ASSET_JOB - f639add0-6a49-4738-bbd2-754e4dfdb667 - bronze_crypto_candles - Ingesting cryptocurrency/BTCUSDT-5m-2025-09.csv
+2026-02-20 19:58:57 +0000 - dagster - INFO - __ASSET_JOB - f639add0-6a49-4738-bbd2-754e4dfdb667 - bronze_crypto_candles - Ingesting cryptocurrency/BTCUSDT-5m-2025-10.csv
+2026-02-20 19:58:59 +0000 - dagster - INFO - __ASSET_JOB - f639add0-6a49-4738-bbd2-754e4dfdb667 - bronze_crypto_candles - Ingesting cryptocurrency/BTCUSDT-5m-2025-11.csv
+2026-02-20 19:59:00 +0000 - dagster - INFO - __ASSET_JOB - f639add0-6a49-4738-bbd2-754e4dfdb667 - bronze_crypto_candles - Ingesting cryptocurrency/BTCUSDT-5m-2025-12.csv
+2026-02-20 19:59:02 +0000 - dagster - INFO - __ASSET_JOB - f639add0-6a49-4738-bbd2-754e4dfdb667 - bronze_crypto_candles - ✔ RAW ingestão concluída
+2026-02-20 19:59:02 +0000 - dagster - DEBUG - __ASSET_JOB - f639add0-6a49-4738-bbd2-754e4dfdb667 - 54164 - bronze_crypto_candles - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2026-02-20 19:59:02 +0000 - dagster - DEBUG - __ASSET_JOB - f639add0-6a49-4738-bbd2-754e4dfdb667 - bronze_crypto_candles - Writing file at: /opt/dagster/dagster_home/storage/bronze_crypto_candles using PickledObjectFilesystemIOManager...
+2026-02-20 19:59:02 +0000 - dagster - DEBUG - __ASSET_JOB - f639add0-6a49-4738-bbd2-754e4dfdb667 - 54164 - bronze_crypto_candles - ASSET_MATERIALIZATION - Materialized value bronze_crypto_candles.
+2026-02-20 19:59:02 +0000 - dagster - DEBUG - __ASSET_JOB - f639add0-6a49-4738-bbd2-754e4dfdb667 - 54164 - bronze_crypto_candles - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2026-02-20 19:59:02 +0000 - dagster - DEBUG - __ASSET_JOB - f639add0-6a49-4738-bbd2-754e4dfdb667 - 54164 - bronze_crypto_candles - STEP_SUCCESS - Finished execution of step "bronze_crypto_candles" in 18.86s.

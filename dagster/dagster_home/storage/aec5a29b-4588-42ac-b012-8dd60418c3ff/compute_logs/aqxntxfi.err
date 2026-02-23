@@ -1,0 +1,58 @@
+2026-02-20 22:44:13 +0000 - dagster - DEBUG - crypto_ingestion_job - aec5a29b-4588-42ac-b012-8dd60418c3ff - 59326 - LOGS_CAPTURED - Started capturing logs in process (pid: 59326).
+2026-02-20 22:44:13 +0000 - dagster - DEBUG - crypto_ingestion_job - aec5a29b-4588-42ac-b012-8dd60418c3ff - 59326 - ingest_crypto_file_op - STEP_START - Started execution of step "ingest_crypto_file_op".
+2026-02-20 22:44:13 +0000 - dagster - INFO - crypto_ingestion_job - aec5a29b-4588-42ac-b012-8dd60418c3ff - ingest_crypto_file_op - Ingestando BTCUSDT (5m) do caminho: cryptocurrency/BTCUSDT-5m-2025-09.csv
+2026-02-20 22:44:13 +0000 - dagster - INFO - crypto_ingestion_job - aec5a29b-4588-42ac-b012-8dd60418c3ff - ingest_crypto_file_op - Ingesting cryptocurrency/BTCUSDT-5m-2025-09.csv
+2026-02-20 22:44:13 +0000 - dagster - INFO - crypto_ingestion_job - aec5a29b-4588-42ac-b012-8dd60418c3ff - ingest_crypto_file_op - shape: (10, 14)
+┌─────────────┬──────────┬──────────┬──────────┬───┬────────────┬────────┬────────────┬────────────┐
+│ open_time   ┆ open     ┆ high     ┆ low      ┆ … ┆ taker_buy_ ┆ ignore ┆ _source_fi ┆ _ingestion │
+│ ---         ┆ ---      ┆ ---      ┆ ---      ┆   ┆ quote_volu ┆ ---    ┆ le         ┆ _time      │
+│ i64         ┆ f64      ┆ f64      ┆ f64      ┆   ┆ me         ┆ i64    ┆ ---        ┆ ---        │
+│             ┆          ┆          ┆          ┆   ┆ ---        ┆        ┆ str        ┆ str        │
+│             ┆          ┆          ┆          ┆   ┆ f64        ┆        ┆            ┆            │
+╞═════════════╪══════════╪══════════╪══════════╪═══╪════════════╪════════╪════════════╪════════════╡
+│ 17566848000 ┆ 108208.4 ┆ 108295.8 ┆ 108056.9 ┆ … ┆ 1.9873e7   ┆ 0      ┆ cryptocurr ┆ 2026-02-20 │
+│ 00          ┆          ┆          ┆          ┆   ┆            ┆        ┆ ency/BTCUS ┆ T22:44:13. │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ DT-5m-2025 ┆ 589186+00: │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ …          ┆ …          │
+│ 17566851000 ┆ 108057.0 ┆ 108121.2 ┆ 107926.2 ┆ … ┆ 5.3628e7   ┆ 0      ┆ cryptocurr ┆ 2026-02-20 │
+│ 00          ┆          ┆          ┆          ┆   ┆            ┆        ┆ ency/BTCUS ┆ T22:44:13. │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ DT-5m-2025 ┆ 589186+00: │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ …          ┆ …          │
+│ 17566854000 ┆ 107953.2 ┆ 108024.2 ┆ 107927.3 ┆ … ┆ 3.4991e7   ┆ 0      ┆ cryptocurr ┆ 2026-02-20 │
+│ 00          ┆          ┆          ┆          ┆   ┆            ┆        ┆ ency/BTCUS ┆ T22:44:13. │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ DT-5m-2025 ┆ 589186+00: │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ …          ┆ …          │
+│ 17566857000 ┆ 107927.3 ┆ 108043.6 ┆ 107877.0 ┆ … ┆ 3.1994e7   ┆ 0      ┆ cryptocurr ┆ 2026-02-20 │
+│ 00          ┆          ┆          ┆          ┆   ┆            ┆        ┆ ency/BTCUS ┆ T22:44:13. │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ DT-5m-2025 ┆ 589186+00: │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ …          ┆ …          │
+│ 17566860000 ┆ 107900.4 ┆ 107931.9 ┆ 107662.7 ┆ … ┆ 3.3344e7   ┆ 0      ┆ cryptocurr ┆ 2026-02-20 │
+│ 00          ┆          ┆          ┆          ┆   ┆            ┆        ┆ ency/BTCUS ┆ T22:44:13. │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ DT-5m-2025 ┆ 589186+00: │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ …          ┆ …          │
+│ 17566863000 ┆ 107724.1 ┆ 107835.3 ┆ 107588.0 ┆ … ┆ 9.9833e7   ┆ 0      ┆ cryptocurr ┆ 2026-02-20 │
+│ 00          ┆          ┆          ┆          ┆   ┆            ┆        ┆ ency/BTCUS ┆ T22:44:13. │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ DT-5m-2025 ┆ 589186+00: │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ …          ┆ …          │
+│ 17566866000 ┆ 107780.1 ┆ 107875.0 ┆ 107639.5 ┆ … ┆ 4.9377e7   ┆ 0      ┆ cryptocurr ┆ 2026-02-20 │
+│ 00          ┆          ┆          ┆          ┆   ┆            ┆        ┆ ency/BTCUS ┆ T22:44:13. │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ DT-5m-2025 ┆ 589186+00: │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ …          ┆ …          │
+│ 17566869000 ┆ 107736.4 ┆ 107799.0 ┆ 107624.6 ┆ … ┆ 2.3979e7   ┆ 0      ┆ cryptocurr ┆ 2026-02-20 │
+│ 00          ┆          ┆          ┆          ┆   ┆            ┆        ┆ ency/BTCUS ┆ T22:44:13. │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ DT-5m-2025 ┆ 589186+00: │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ …          ┆ …          │
+│ 17566872000 ┆ 107728.2 ┆ 108182.6 ┆ 107718.5 ┆ … ┆ 8.6328e7   ┆ 0      ┆ cryptocurr ┆ 2026-02-20 │
+│ 00          ┆          ┆          ┆          ┆   ┆            ┆        ┆ ency/BTCUS ┆ T22:44:13. │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ DT-5m-2025 ┆ 589186+00: │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ …          ┆ …          │
+│ 17566875000 ┆ 108129.6 ┆ 108372.5 ┆ 108081.2 ┆ … ┆ 4.6851e7   ┆ 0      ┆ cryptocurr ┆ 2026-02-20 │
+│ 00          ┆          ┆          ┆          ┆   ┆            ┆        ┆ ency/BTCUS ┆ T22:44:13. │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ DT-5m-2025 ┆ 589186+00: │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ …          ┆ …          │
+└─────────────┴──────────┴──────────┴──────────┴───┴────────────┴────────┴────────────┴────────────┘
+2026-02-20 22:44:17 +0000 - dagster - INFO - crypto_ingestion_job - aec5a29b-4588-42ac-b012-8dd60418c3ff - ingest_crypto_file_op - ✔ RAW ingestão concluída
+2026-02-20 22:44:17 +0000 - dagster - DEBUG - crypto_ingestion_job - aec5a29b-4588-42ac-b012-8dd60418c3ff - 59326 - ingest_crypto_file_op - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2026-02-20 22:44:17 +0000 - dagster - DEBUG - crypto_ingestion_job - aec5a29b-4588-42ac-b012-8dd60418c3ff - ingest_crypto_file_op - Writing file at: /opt/dagster/dagster_home/storage/aec5a29b-4588-42ac-b012-8dd60418c3ff/ingest_crypto_file_op/result using PickledObjectFilesystemIOManager...
+2026-02-20 22:44:17 +0000 - dagster - DEBUG - crypto_ingestion_job - aec5a29b-4588-42ac-b012-8dd60418c3ff - 59326 - ingest_crypto_file_op - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2026-02-20 22:44:17 +0000 - dagster - DEBUG - crypto_ingestion_job - aec5a29b-4588-42ac-b012-8dd60418c3ff - 59326 - ingest_crypto_file_op - STEP_SUCCESS - Finished execution of step "ingest_crypto_file_op" in 4.12s.

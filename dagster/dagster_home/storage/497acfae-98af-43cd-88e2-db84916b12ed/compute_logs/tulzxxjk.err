@@ -1,0 +1,117 @@
+2026-02-20 22:43:52 +0000 - dagster - DEBUG - crypto_ingestion_job - 497acfae-98af-43cd-88e2-db84916b12ed - 58952 - LOGS_CAPTURED - Started capturing logs in process (pid: 58952).
+2026-02-20 22:43:52 +0000 - dagster - DEBUG - crypto_ingestion_job - 497acfae-98af-43cd-88e2-db84916b12ed - 58952 - ingest_crypto_file_op - STEP_START - Started execution of step "ingest_crypto_file_op".
+2026-02-20 22:43:52 +0000 - dagster - INFO - crypto_ingestion_job - 497acfae-98af-43cd-88e2-db84916b12ed - ingest_crypto_file_op - Ingestando BTCUSDT (5m) do caminho: cryptocurrency/BTCUSDT-5m-2025-06.csv
+2026-02-20 22:43:52 +0000 - dagster - INFO - crypto_ingestion_job - 497acfae-98af-43cd-88e2-db84916b12ed - ingest_crypto_file_op - Ingesting cryptocurrency/BTCUSDT-5m-2025-06.csv
+2026-02-20 22:43:53 +0000 - dagster - INFO - crypto_ingestion_job - 497acfae-98af-43cd-88e2-db84916b12ed - ingest_crypto_file_op - shape: (10, 14)
+┌─────────────┬──────────┬──────────┬──────────┬───┬────────────┬────────┬────────────┬────────────┐
+│ open_time   ┆ open     ┆ high     ┆ low      ┆ … ┆ taker_buy_ ┆ ignore ┆ _source_fi ┆ _ingestion │
+│ ---         ┆ ---      ┆ ---      ┆ ---      ┆   ┆ quote_volu ┆ ---    ┆ le         ┆ _time      │
+│ i64         ┆ f64      ┆ f64      ┆ f64      ┆   ┆ me         ┆ i64    ┆ ---        ┆ ---        │
+│             ┆          ┆          ┆          ┆   ┆ ---        ┆        ┆ str        ┆ str        │
+│             ┆          ┆          ┆          ┆   ┆ f64        ┆        ┆            ┆            │
+╞═════════════╪══════════╪══════════╪══════════╪═══╪════════════╪════════╪════════════╪════════════╡
+│ 17487360000 ┆ 104544.6 ┆ 104599.6 ┆ 104476.7 ┆ … ┆ 1.5538e7   ┆ 0      ┆ cryptocurr ┆ 2026-02-20 │
+│ 00          ┆          ┆          ┆          ┆   ┆            ┆        ┆ ency/BTCUS ┆ T22:43:53. │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ DT-5m-2025 ┆ 055626+00: │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ …          ┆ …          │
+│ 17487363000 ┆ 104476.8 ┆ 104516.3 ┆ 104450.8 ┆ … ┆ 1.4061e7   ┆ 0      ┆ cryptocurr ┆ 2026-02-20 │
+│ 00          ┆          ┆          ┆          ┆   ┆            ┆        ┆ ency/BTCUS ┆ T22:43:53. │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ DT-5m-2025 ┆ 055626+00: │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ …          ┆ …          │
+│ 17487366000 ┆ 104496.5 ┆ 104500.0 ┆ 104400.0 ┆ … ┆ 1.5569e7   ┆ 0      ┆ cryptocurr ┆ 2026-02-20 │
+│ 00          ┆          ┆          ┆          ┆   ┆            ┆        ┆ ency/BTCUS ┆ T22:43:53. │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ DT-5m-2025 ┆ 055626+00: │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ …          ┆ …          │
+│ 17487369000 ┆ 104427.4 ┆ 104443.6 ┆ 104350.0 ┆ … ┆ 1.7118e7   ┆ 0      ┆ cryptocurr ┆ 2026-02-20 │
+│ 00          ┆          ┆          ┆          ┆   ┆            ┆        ┆ ency/BTCUS ┆ T22:43:53. │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ DT-5m-2025 ┆ 055626+00: │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ …          ┆ …          │
+│ 17487372000 ┆ 104423.9 ┆ 104455.2 ┆ 104323.0 ┆ … ┆ 9.7575e6   ┆ 0      ┆ cryptocurr ┆ 2026-02-20 │
+│ 00          ┆          ┆          ┆          ┆   ┆            ┆        ┆ ency/BTCUS ┆ T22:43:53. │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ DT-5m-2025 ┆ 055626+00: │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ …          ┆ …          │
+│ 17487375000 ┆ 104383.3 ┆ 104422.3 ┆ 104314.8 ┆ … ┆ 2.1862e7   ┆ 0      ┆ cryptocurr ┆ 2026-02-20 │
+│ 00          ┆          ┆          ┆          ┆   ┆            ┆        ┆ ency/BTCUS ┆ T22:43:53. │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ DT-5m-2025 ┆ 055626+00: │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ …          ┆ …          │
+│ 17487378000 ┆ 104319.4 ┆ 104393.6 ┆ 104277.3 ┆ … ┆ 4.2951e7   ┆ 0      ┆ cryptocurr ┆ 2026-02-20 │
+│ 00          ┆          ┆          ┆          ┆   ┆            ┆        ┆ ency/BTCUS ┆ T22:43:53. │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ DT-5m-2025 ┆ 055626+00: │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ …          ┆ …          │
+│ 17487381000 ┆ 104342.3 ┆ 104413.0 ┆ 104342.2 ┆ … ┆ 1.2555e7   ┆ 0      ┆ cryptocurr ┆ 2026-02-20 │
+│ 00          ┆          ┆          ┆          ┆   ┆            ┆        ┆ ency/BTCUS ┆ T22:43:53. │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ DT-5m-2025 ┆ 055626+00: │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ …          ┆ …          │
+│ 17487384000 ┆ 104412.9 ┆ 104418.4 ┆ 104384.8 ┆ … ┆ 7.6595e6   ┆ 0      ┆ cryptocurr ┆ 2026-02-20 │
+│ 00          ┆          ┆          ┆          ┆   ┆            ┆        ┆ ency/BTCUS ┆ T22:43:53. │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ DT-5m-2025 ┆ 055626+00: │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ …          ┆ …          │
+│ 17487387000 ┆ 104418.4 ┆ 104435.0 ┆ 104371.2 ┆ … ┆ 8.6282e6   ┆ 0      ┆ cryptocurr ┆ 2026-02-20 │
+│ 00          ┆          ┆          ┆          ┆   ┆            ┆        ┆ ency/BTCUS ┆ T22:43:53. │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ DT-5m-2025 ┆ 055626+00: │
+│             ┆          ┆          ┆          ┆   ┆            ┆        ┆ …          ┆ …          │
+└─────────────┴──────────┴──────────┴──────────┴───┴────────────┴────────┴────────────┴────────────┘
+2026-02-20 22:44:00 +0000 - dagster - ERROR - crypto_ingestion_job - 497acfae-98af-43cd-88e2-db84916b12ed - 58952 - ingest_crypto_file_op - STEP_FAILURE - Execution of step "ingest_crypto_file_op" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "ingest_crypto_file_op"::
+
+pyiceberg.exceptions.CommitFailedException: CommitFailedException: Requirement failed: branch main has changed: expected id 5908111404769239895 != 2969225199871023546
+
+Stack Trace:
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/project/crypto_candles/assets/ops.py", line 48, in ingest_crypto_file_op
+    table.overwrite(
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/table/__init__.py", line 1468, in overwrite
+    with self.transaction() as tx:
+         ^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/table/__init__.py", line 280, in __exit__
+    self.commit_transaction()
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/table/__init__.py", line 985, in commit_transaction
+    self._table._do_commit(  # pylint: disable=W0212
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/table/__init__.py", line 1539, in _do_commit
+    response = self.catalog.commit_table(self, requirements, updates)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 331, in wrapped_f
+    return copy(f, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 393, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/catalog/rest/__init__.py", line 1022, in commit_table
+    _handle_non_200_response(
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/catalog/rest/response.py", line 111, in _handle_non_200_response
+    raise exception(response) from exc
+
+The above exception was caused by the following exception:
+requests.exceptions.HTTPError: 409 Client Error: Conflict for url: http://rest:8181/v1/namespaces/bronze/tables/crypto_candles
+
+Stack Trace:
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/catalog/rest/__init__.py", line 1020, in commit_table
+    response.raise_for_status()
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+

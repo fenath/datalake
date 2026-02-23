@@ -1,0 +1,51 @@
+2026-02-20 20:15:20 +0000 - dagster - DEBUG - __ASSET_JOB - a69ef350-1d1e-43ff-ac47-f5b486489e70 - 65345 - LOGS_CAPTURED - Started capturing logs in process (pid: 65345).
+2026-02-20 20:15:20 +0000 - dagster - DEBUG - __ASSET_JOB - a69ef350-1d1e-43ff-ac47-f5b486489e70 - 65345 - silver_crypto_candles - STEP_START - Started execution of step "silver_crypto_candles".
+2026-02-20 20:15:21 +0000 - dagster - DEBUG - __ASSET_JOB - a69ef350-1d1e-43ff-ac47-f5b486489e70 - silver_crypto_candles - Loading file from: /opt/dagster/dagster_home/storage/bronze_crypto_candles using PickledObjectFilesystemIOManager...
+2026-02-20 20:15:21 +0000 - dagster - DEBUG - __ASSET_JOB - a69ef350-1d1e-43ff-ac47-f5b486489e70 - 65345 - silver_crypto_candles - LOADED_INPUT - Loaded input "bronze_crypto_candles" using input manager "io_manager"
+2026-02-20 20:15:21 +0000 - dagster - DEBUG - __ASSET_JOB - a69ef350-1d1e-43ff-ac47-f5b486489e70 - 65345 - silver_crypto_candles - STEP_INPUT - Got input "bronze_crypto_candles" of type "Any". (Type check passed).
+2026-02-20 20:15:22 +0000 - dagster - ERROR - __ASSET_JOB - a69ef350-1d1e-43ff-ac47-f5b486489e70 - 65345 - silver_crypto_candles - STEP_FAILURE - Execution of step "silver_crypto_candles" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "silver_crypto_candles"::
+
+pyiceberg.exceptions.NotInstalledError: pyiceberg_core needs to be installed. pip install "pyiceberg[pyiceberg-core]"
+
+Stack Trace:
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/project/crypto_candles/assets/silver.py", line 36, in silver_crypto_candles
+    silver_table.overwrite(
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/table/__init__.py", line 1469, in overwrite
+    tx.overwrite(
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/table/__init__.py", line 652, in overwrite
+    for data_file in data_files:
+                     ^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py", line 2875, in _dataframe_to_data_files
+    yield from write_file(
+               ^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py", line 2696, in write_file
+    data_files = executor.map(write_parquet, tasks)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 608, in map
+    fs = [self.submit(fn, *args) for args in zip(*iterables)]
+                                             ^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py", line 2886, in <genexpr>
+    for partition in partitions
+                     ^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py", line 2922, in _determine_partitions
+    arrow_table = arrow_table.append_column(name, partition.transform.pyarrow_transform(source_field.field_type)(field_array))
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/transforms.py", line 571, in pyarrow_transform
+    pyiceberg_core_transform = _try_import("pyiceberg_core", extras_name="pyiceberg-core").transform
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/transforms.py", line 121, in _try_import
+    raise NotInstalledError(msg) from None
+

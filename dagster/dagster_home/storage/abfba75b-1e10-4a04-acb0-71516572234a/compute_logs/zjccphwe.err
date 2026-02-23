@@ -1,0 +1,49 @@
+2026-02-20 22:46:06 +0000 - dagster - DEBUG - crypto_ingestion_job - abfba75b-1e10-4a04-acb0-71516572234a - 60930 - LOGS_CAPTURED - Started capturing logs in process (pid: 60930).
+2026-02-20 22:46:06 +0000 - dagster - DEBUG - crypto_ingestion_job - abfba75b-1e10-4a04-acb0-71516572234a - 60930 - ingest_crypto_file_op - STEP_START - Started execution of step "ingest_crypto_file_op".
+2026-02-20 22:46:06 +0000 - dagster - INFO - crypto_ingestion_job - abfba75b-1e10-4a04-acb0-71516572234a - ingest_crypto_file_op - Ingestando ETHUSDT (5m) do caminho: cryptocurrency/ETHUSDT-5m-2026-01.csv
+2026-02-20 22:46:06 +0000 - dagster - INFO - crypto_ingestion_job - abfba75b-1e10-4a04-acb0-71516572234a - ingest_crypto_file_op - Ingesting cryptocurrency/ETHUSDT-5m-2026-01.csv
+2026-02-20 22:46:06 +0000 - dagster - INFO - crypto_ingestion_job - abfba75b-1e10-4a04-acb0-71516572234a - ingest_crypto_file_op - shape: (10, 14)
+┌─────────────┬─────────┬─────────┬─────────┬───┬─────────────┬────────┬─────────────┬─────────────┐
+│ open_time   ┆ open    ┆ high    ┆ low     ┆ … ┆ taker_buy_q ┆ ignore ┆ _source_fil ┆ _ingestion_ │
+│ ---         ┆ ---     ┆ ---     ┆ ---     ┆   ┆ uote_volume ┆ ---    ┆ e           ┆ time        │
+│ i64         ┆ f64     ┆ f64     ┆ f64     ┆   ┆ ---         ┆ i64    ┆ ---         ┆ ---         │
+│             ┆         ┆         ┆         ┆   ┆ f64         ┆        ┆ str         ┆ str         │
+╞═════════════╪═════════╪═════════╪═════════╪═══╪═════════════╪════════╪═════════════╪═════════════╡
+│ 17672256000 ┆ 2970.4  ┆ 2973.74 ┆ 2970.0  ┆ … ┆ 7.7936e6    ┆ 0      ┆ cryptocurre ┆ 2026-02-20T │
+│ 00          ┆         ┆         ┆         ┆   ┆             ┆        ┆ ncy/ETHUSDT ┆ 22:46:06.29 │
+│             ┆         ┆         ┆         ┆   ┆             ┆        ┆ -5m-2026…   ┆ 7752+00:…   │
+│ 17672259000 ┆ 2973.66 ┆ 2979.34 ┆ 2973.66 ┆ … ┆ 2.3215e7    ┆ 0      ┆ cryptocurre ┆ 2026-02-20T │
+│ 00          ┆         ┆         ┆         ┆   ┆             ┆        ┆ ncy/ETHUSDT ┆ 22:46:06.29 │
+│             ┆         ┆         ┆         ┆   ┆             ┆        ┆ -5m-2026…   ┆ 7752+00:…   │
+│ 17672262000 ┆ 2976.96 ┆ 2977.66 ┆ 2975.0  ┆ … ┆ 2.9081e6    ┆ 0      ┆ cryptocurre ┆ 2026-02-20T │
+│ 00          ┆         ┆         ┆         ┆   ┆             ┆        ┆ ncy/ETHUSDT ┆ 22:46:06.29 │
+│             ┆         ┆         ┆         ┆   ┆             ┆        ┆ -5m-2026…   ┆ 7752+00:…   │
+│ 17672265000 ┆ 2975.0  ┆ 2977.0  ┆ 2975.0  ┆ … ┆ 2.3989e6    ┆ 0      ┆ cryptocurre ┆ 2026-02-20T │
+│ 00          ┆         ┆         ┆         ┆   ┆             ┆        ┆ ncy/ETHUSDT ┆ 22:46:06.29 │
+│             ┆         ┆         ┆         ┆   ┆             ┆        ┆ -5m-2026…   ┆ 7752+00:…   │
+│ 17672268000 ┆ 2976.45 ┆ 2979.0  ┆ 2976.45 ┆ … ┆ 3.5070e6    ┆ 0      ┆ cryptocurre ┆ 2026-02-20T │
+│ 00          ┆         ┆         ┆         ┆   ┆             ┆        ┆ ncy/ETHUSDT ┆ 22:46:06.29 │
+│             ┆         ┆         ┆         ┆   ┆             ┆        ┆ -5m-2026…   ┆ 7752+00:…   │
+│ 17672271000 ┆ 2977.15 ┆ 2979.42 ┆ 2977.14 ┆ … ┆ 5.0412e6    ┆ 0      ┆ cryptocurre ┆ 2026-02-20T │
+│ 00          ┆         ┆         ┆         ┆   ┆             ┆        ┆ ncy/ETHUSDT ┆ 22:46:06.29 │
+│             ┆         ┆         ┆         ┆   ┆             ┆        ┆ -5m-2026…   ┆ 7752+00:…   │
+│ 17672274000 ┆ 2978.41 ┆ 2979.62 ┆ 2977.2  ┆ … ┆ 3.2478e6    ┆ 0      ┆ cryptocurre ┆ 2026-02-20T │
+│ 00          ┆         ┆         ┆         ┆   ┆             ┆        ┆ ncy/ETHUSDT ┆ 22:46:06.29 │
+│             ┆         ┆         ┆         ┆   ┆             ┆        ┆ -5m-2026…   ┆ 7752+00:…   │
+│ 17672277000 ┆ 2979.14 ┆ 2979.52 ┆ 2977.06 ┆ … ┆ 4.8722e6    ┆ 0      ┆ cryptocurre ┆ 2026-02-20T │
+│ 00          ┆         ┆         ┆         ┆   ┆             ┆        ┆ ncy/ETHUSDT ┆ 22:46:06.29 │
+│             ┆         ┆         ┆         ┆   ┆             ┆        ┆ -5m-2026…   ┆ 7752+00:…   │
+│ 17672280000 ┆ 2978.25 ┆ 2978.87 ┆ 2977.65 ┆ … ┆ 1.8123e6    ┆ 0      ┆ cryptocurre ┆ 2026-02-20T │
+│ 00          ┆         ┆         ┆         ┆   ┆             ┆        ┆ ncy/ETHUSDT ┆ 22:46:06.29 │
+│             ┆         ┆         ┆         ┆   ┆             ┆        ┆ -5m-2026…   ┆ 7752+00:…   │
+│ 17672283000 ┆ 2978.49 ┆ 2980.88 ┆ 2977.86 ┆ … ┆ 5.4105e6    ┆ 0      ┆ cryptocurre ┆ 2026-02-20T │
+│ 00          ┆         ┆         ┆         ┆   ┆             ┆        ┆ ncy/ETHUSDT ┆ 22:46:06.29 │
+│             ┆         ┆         ┆         ┆   ┆             ┆        ┆ -5m-2026…   ┆ 7752+00:…   │
+└─────────────┴─────────┴─────────┴─────────┴───┴─────────────┴────────┴─────────────┴─────────────┘
+/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/table/__init__.py:639: UserWarning: Delete operation did not match any records
+  self.delete(
+2026-02-20 22:46:08 +0000 - dagster - INFO - crypto_ingestion_job - abfba75b-1e10-4a04-acb0-71516572234a - ingest_crypto_file_op - ✔ RAW ingestão concluída
+2026-02-20 22:46:08 +0000 - dagster - DEBUG - crypto_ingestion_job - abfba75b-1e10-4a04-acb0-71516572234a - 60930 - ingest_crypto_file_op - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2026-02-20 22:46:08 +0000 - dagster - DEBUG - crypto_ingestion_job - abfba75b-1e10-4a04-acb0-71516572234a - ingest_crypto_file_op - Writing file at: /opt/dagster/dagster_home/storage/abfba75b-1e10-4a04-acb0-71516572234a/ingest_crypto_file_op/result using PickledObjectFilesystemIOManager...
+2026-02-20 22:46:08 +0000 - dagster - DEBUG - crypto_ingestion_job - abfba75b-1e10-4a04-acb0-71516572234a - 60930 - ingest_crypto_file_op - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2026-02-20 22:46:08 +0000 - dagster - DEBUG - crypto_ingestion_job - abfba75b-1e10-4a04-acb0-71516572234a - 60930 - ingest_crypto_file_op - STEP_SUCCESS - Finished execution of step "ingest_crypto_file_op" in 2.11s.

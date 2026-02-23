@@ -1,0 +1,7 @@
+2026-02-20 19:20:53 +0000 - dagster - DEBUG - __ASSET_JOB - cfe2822b-65ae-47cc-b7e8-9635ee702d8f - 30935 - LOGS_CAPTURED - Started capturing logs in process (pid: 30935).
+2026-02-20 19:20:53 +0000 - dagster - DEBUG - __ASSET_JOB - cfe2822b-65ae-47cc-b7e8-9635ee702d8f - 30935 - raw_crypto_files - STEP_START - Started execution of step "raw_crypto_files".
+2026-02-20 19:20:53 +0000 - dagster - DEBUG - __ASSET_JOB - cfe2822b-65ae-47cc-b7e8-9635ee702d8f - 30935 - raw_crypto_files - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2026-02-20 19:20:53 +0000 - dagster - DEBUG - __ASSET_JOB - cfe2822b-65ae-47cc-b7e8-9635ee702d8f - raw_crypto_files - Writing file at: /opt/dagster/dagster_home/storage/raw_crypto_files using PickledObjectFilesystemIOManager...
+2026-02-20 19:20:53 +0000 - dagster - DEBUG - __ASSET_JOB - cfe2822b-65ae-47cc-b7e8-9635ee702d8f - 30935 - raw_crypto_files - ASSET_MATERIALIZATION - Materialized value raw_crypto_files.
+2026-02-20 19:20:53 +0000 - dagster - DEBUG - __ASSET_JOB - cfe2822b-65ae-47cc-b7e8-9635ee702d8f - 30935 - raw_crypto_files - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2026-02-20 19:20:53 +0000 - dagster - DEBUG - __ASSET_JOB - cfe2822b-65ae-47cc-b7e8-9635ee702d8f - 30935 - raw_crypto_files - STEP_SUCCESS - Finished execution of step "raw_crypto_files" in 166ms.

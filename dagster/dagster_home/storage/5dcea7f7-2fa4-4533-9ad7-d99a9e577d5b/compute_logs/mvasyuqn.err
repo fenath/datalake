@@ -1,0 +1,11 @@
+2026-02-20 22:55:16 +0000 - dagster - DEBUG - crypto_ingestion_job - 5dcea7f7-2fa4-4533-9ad7-d99a9e577d5b - 67306 - LOGS_CAPTURED - Started capturing logs in process (pid: 67306).
+2026-02-20 22:55:16 +0000 - dagster - DEBUG - crypto_ingestion_job - 5dcea7f7-2fa4-4533-9ad7-d99a9e577d5b - 67306 - silver_crypto - STEP_START - Started execution of step "silver_crypto".
+2026-02-20 22:55:16 +0000 - dagster - DEBUG - crypto_ingestion_job - 5dcea7f7-2fa4-4533-9ad7-d99a9e577d5b - silver_crypto - Loading file from: /opt/dagster/dagster_home/storage/9eb5fa4f-6342-47d7-b669-716a457d2d22/ingest_crypto_file_op/result using PickledObjectFilesystemIOManager...
+2026-02-20 22:55:16 +0000 - dagster - DEBUG - crypto_ingestion_job - 5dcea7f7-2fa4-4533-9ad7-d99a9e577d5b - 67306 - silver_crypto - LOADED_INPUT - Loaded input "bronze_metadata" using input manager "io_manager", from output "result" of step "ingest_crypto_file_op"
+2026-02-20 22:55:16 +0000 - dagster - DEBUG - crypto_ingestion_job - 5dcea7f7-2fa4-4533-9ad7-d99a9e577d5b - 67306 - silver_crypto - STEP_INPUT - Got input "bronze_metadata" of type "Any". (Type check passed).
+2026-02-20 22:55:16 +0000 - dagster - INFO - crypto_ingestion_job - 5dcea7f7-2fa4-4533-9ad7-d99a9e577d5b - silver_crypto - Iniciando tratamento Silver para BTCUSDT
+2026-02-20 22:55:20 +0000 - dagster - INFO - crypto_ingestion_job - 5dcea7f7-2fa4-4533-9ad7-d99a9e577d5b - silver_crypto - ✅ Novos valores corretos
+2026-02-20 22:55:21 +0000 - dagster - DEBUG - crypto_ingestion_job - 5dcea7f7-2fa4-4533-9ad7-d99a9e577d5b - 67306 - silver_crypto - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2026-02-20 22:55:21 +0000 - dagster - DEBUG - crypto_ingestion_job - 5dcea7f7-2fa4-4533-9ad7-d99a9e577d5b - silver_crypto - Writing file at: /opt/dagster/dagster_home/storage/5dcea7f7-2fa4-4533-9ad7-d99a9e577d5b/silver_crypto/result using PickledObjectFilesystemIOManager...
+2026-02-20 22:55:21 +0000 - dagster - DEBUG - crypto_ingestion_job - 5dcea7f7-2fa4-4533-9ad7-d99a9e577d5b - 67306 - silver_crypto - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2026-02-20 22:55:21 +0000 - dagster - DEBUG - crypto_ingestion_job - 5dcea7f7-2fa4-4533-9ad7-d99a9e577d5b - 67306 - silver_crypto - STEP_SUCCESS - Finished execution of step "silver_crypto" in 4.94s.

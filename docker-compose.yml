@@ -124,6 +124,45 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
+  dagster-web:
+    build:
+      context: ./dagster
+    container_name: dagster-web
+    command:
+      - uv
+      - run
+      - dagster-webserver
+      - -h
+      - 0.0.0.0
+      - -p
+      - "3000"
+      - -w
+      - /opt/dagster/app/workspace.yaml
+    ports:
+      - "3001:3000"
+    volumes:
+      - ./dagster/project:/opt/dagster/app/project
+      - ./dagster/dagster_home:/opt/dagster/dagster_home
+    networks:
+      - iceberg_net
+    restart: unless-stopped
+  dagster-daemon:
+    build:
+      context: ./dagster
+    entrypoint:
+      - uv
+      - run
+      - dagster-daemon
+      - run
+    container_name: dagster-daemon
+    volumes:
+      - ./dagster/project:/opt/dagster/app/project
+      - ./dagster/dagster_home:/opt/dagster/dagster_home
+    networks:
+      - iceberg_net
+    restart: unless-stopped
+
+
 networks:
   iceberg_net:
 

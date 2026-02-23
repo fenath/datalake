@@ -1,0 +1,13 @@
+2026-02-20 22:54:26 +0000 - dagster - DEBUG - crypto_ingestion_job - 1ce33726-6f5a-4223-b149-edb429574ff3 - 66498 - LOGS_CAPTURED - Started capturing logs in process (pid: 66498).
+2026-02-20 22:54:26 +0000 - dagster - DEBUG - crypto_ingestion_job - 1ce33726-6f5a-4223-b149-edb429574ff3 - 66498 - silver_crypto - STEP_START - Started execution of step "silver_crypto".
+2026-02-20 22:54:26 +0000 - dagster - DEBUG - crypto_ingestion_job - 1ce33726-6f5a-4223-b149-edb429574ff3 - silver_crypto - Loading file from: /opt/dagster/dagster_home/storage/1ce33726-6f5a-4223-b149-edb429574ff3/ingest_crypto_file_op/result using PickledObjectFilesystemIOManager...
+2026-02-20 22:54:26 +0000 - dagster - DEBUG - crypto_ingestion_job - 1ce33726-6f5a-4223-b149-edb429574ff3 - 66498 - silver_crypto - LOADED_INPUT - Loaded input "bronze_metadata" using input manager "io_manager", from output "result" of step "ingest_crypto_file_op"
+2026-02-20 22:54:26 +0000 - dagster - DEBUG - crypto_ingestion_job - 1ce33726-6f5a-4223-b149-edb429574ff3 - 66498 - silver_crypto - STEP_INPUT - Got input "bronze_metadata" of type "Any". (Type check passed).
+2026-02-20 22:54:26 +0000 - dagster - INFO - crypto_ingestion_job - 1ce33726-6f5a-4223-b149-edb429574ff3 - silver_crypto - Iniciando tratamento Silver para ETHUSDT
+/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/table/__init__.py:639: UserWarning: Delete operation did not match any records
+  self.delete(
+2026-02-20 22:54:28 +0000 - dagster - INFO - crypto_ingestion_job - 1ce33726-6f5a-4223-b149-edb429574ff3 - silver_crypto - ✅ Novos valores corretos
+2026-02-20 22:54:28 +0000 - dagster - DEBUG - crypto_ingestion_job - 1ce33726-6f5a-4223-b149-edb429574ff3 - 66498 - silver_crypto - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2026-02-20 22:54:28 +0000 - dagster - DEBUG - crypto_ingestion_job - 1ce33726-6f5a-4223-b149-edb429574ff3 - silver_crypto - Writing file at: /opt/dagster/dagster_home/storage/1ce33726-6f5a-4223-b149-edb429574ff3/silver_crypto/result using PickledObjectFilesystemIOManager...
+2026-02-20 22:54:28 +0000 - dagster - DEBUG - crypto_ingestion_job - 1ce33726-6f5a-4223-b149-edb429574ff3 - 66498 - silver_crypto - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2026-02-20 22:54:28 +0000 - dagster - DEBUG - crypto_ingestion_job - 1ce33726-6f5a-4223-b149-edb429574ff3 - 66498 - silver_crypto - STEP_SUCCESS - Finished execution of step "silver_crypto" in 1.58s.
