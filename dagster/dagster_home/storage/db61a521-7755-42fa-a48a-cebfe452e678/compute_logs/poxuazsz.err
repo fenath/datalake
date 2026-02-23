@@ -1,0 +1,76 @@
+2026-02-20 19:53:33 +0000 - dagster - DEBUG - __ASSET_JOB - db61a521-7755-42fa-a48a-cebfe452e678 - 50534 - LOGS_CAPTURED - Started capturing logs in process (pid: 50534).
+2026-02-20 19:53:33 +0000 - dagster - DEBUG - __ASSET_JOB - db61a521-7755-42fa-a48a-cebfe452e678 - 50534 - bronze_crypto_candles - STEP_START - Started execution of step "bronze_crypto_candles".
+2026-02-20 19:53:33 +0000 - dagster - DEBUG - __ASSET_JOB - db61a521-7755-42fa-a48a-cebfe452e678 - bronze_crypto_candles - Loading file from: /opt/dagster/dagster_home/storage/raw_crypto_files using PickledObjectFilesystemIOManager...
+2026-02-20 19:53:33 +0000 - dagster - DEBUG - __ASSET_JOB - db61a521-7755-42fa-a48a-cebfe452e678 - 50534 - bronze_crypto_candles - LOADED_INPUT - Loaded input "raw_crypto_files" using input manager "io_manager"
+2026-02-20 19:53:33 +0000 - dagster - DEBUG - __ASSET_JOB - db61a521-7755-42fa-a48a-cebfe452e678 - 50534 - bronze_crypto_candles - STEP_INPUT - Got input "raw_crypto_files" of type "Any". (Type check passed).
+2026-02-20 19:53:33 +0000 - dagster - INFO - __ASSET_JOB - db61a521-7755-42fa-a48a-cebfe452e678 - bronze_crypto_candles - Ingesting cryptocurrency/BTCUSDT-5m-2026-01.csv
+2026-02-20 19:53:37 +0000 - dagster - INFO - __ASSET_JOB - db61a521-7755-42fa-a48a-cebfe452e678 - bronze_crypto_candles - Ingesting cryptocurrency/BTCUSDT-5m-2025-01.csv
+2026-02-20 19:53:39 +0000 - dagster - INFO - __ASSET_JOB - db61a521-7755-42fa-a48a-cebfe452e678 - bronze_crypto_candles - Ingesting cryptocurrency/BTCUSDT-5m-2025-02.csv
+2026-02-20 19:53:40 +0000 - dagster - INFO - __ASSET_JOB - db61a521-7755-42fa-a48a-cebfe452e678 - bronze_crypto_candles - Ingesting cryptocurrency/BTCUSDT-5m-2025-03.csv
+2026-02-20 19:53:46 +0000 - dagster - INFO - __ASSET_JOB - db61a521-7755-42fa-a48a-cebfe452e678 - bronze_crypto_candles - Ingesting cryptocurrency/BTCUSDT-5m-2025-04.csv
+2026-02-20 19:53:47 +0000 - dagster - INFO - __ASSET_JOB - db61a521-7755-42fa-a48a-cebfe452e678 - bronze_crypto_candles - Ingesting cryptocurrency/BTCUSDT-5m-2025-05.csv
+2026-02-20 19:53:49 +0000 - dagster - INFO - __ASSET_JOB - db61a521-7755-42fa-a48a-cebfe452e678 - bronze_crypto_candles - Ingesting cryptocurrency/BTCUSDT-5m-2025-06.csv
+2026-02-20 19:53:50 +0000 - dagster - INFO - __ASSET_JOB - db61a521-7755-42fa-a48a-cebfe452e678 - bronze_crypto_candles - Ingesting cryptocurrency/BTCUSDT-5m-2025-07.csv
+2026-02-20 19:53:52 +0000 - dagster - INFO - __ASSET_JOB - db61a521-7755-42fa-a48a-cebfe452e678 - bronze_crypto_candles - Ingesting cryptocurrency/BTCUSDT-5m-2025-08.csv
+2026-02-20 19:53:54 +0000 - dagster - INFO - __ASSET_JOB - db61a521-7755-42fa-a48a-cebfe452e678 - bronze_crypto_candles - Ingesting cryptocurrency/BTCUSDT-5m-2025-09.csv
+2026-02-20 19:54:05 +0000 - dagster - ERROR - __ASSET_JOB - db61a521-7755-42fa-a48a-cebfe452e678 - 50534 - bronze_crypto_candles - STEP_FAILURE - Execution of step "bronze_crypto_candles" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "bronze_crypto_candles"::
+
+OSError: When initiating multiple part upload for key 'bronze/crypto_candles/metadata/16403def-00a7-43ec-9940-d7f2b2422ff0-m0.avro' in bucket 'warehouse': AWS Error NETWORK_CONNECTION during CreateMultipartUpload operation: curlCode: 28, Timeout was reached; Details: Operation too slow. Less than 1 bytes/sec transferred the last 3 seconds
+
+Stack Trace:
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/project/crypto_candles/assets/bronze.py", line 35, in bronze_crypto_candles
+    table.overwrite(
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/table/__init__.py", line 1469, in overwrite
+    tx.overwrite(
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/table/__init__.py", line 639, in overwrite
+    self.delete(
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/table/__init__.py", line 744, in delete
+    with self.update_snapshot(
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/table/update/__init__.py", line 76, in __exit__
+    self.commit()
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/table/update/__init__.py", line 72, in commit
+    self._transaction._apply(*self._commit())
+                              ^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/table/update/snapshot.py", line 278, in _commit
+    new_manifests = self._manifests()
+                    ^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/table/update/snapshot.py", line 237, in _manifests
+    return self._process_manifests(added_manifests.result() + delete_manifests.result() + existing_manifests.result())
+                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/table/update/snapshot.py", line 216, in _write_delete_manifest
+    with write_manifest(
+         ^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/manifest.py", line 1045, in __enter__
+    self._writer.__enter__()
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/avro/file.py", line 260, in __enter__
+    self.output_stream = self.output_file.create(overwrite=True)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py", line 364, in create
+    output_file = self._filesystem.open_output_stream(self._path, buffer_size=self._buffer_size)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow/_fs.pyx", line 913, in pyarrow._fs.FileSystem.open_output_stream
+  File "pyarrow/error.pxi", line 155, in pyarrow.lib.pyarrow_internal_check_status
+  File "pyarrow/error.pxi", line 92, in pyarrow.lib.check_status
+

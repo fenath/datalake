@@ -1,0 +1,54 @@
+2026-02-20 22:47:39 +0000 - dagster - DEBUG - crypto_ingestion_job - bbf23b50-1ed3-4e89-82f6-31b64bffc248 - 62035 - LOGS_CAPTURED - Started capturing logs in process (pid: 62035).
+2026-02-20 22:47:39 +0000 - dagster - DEBUG - crypto_ingestion_job - bbf23b50-1ed3-4e89-82f6-31b64bffc248 - 62035 - silver_crypto - STEP_START - Started execution of step "silver_crypto".
+2026-02-20 22:47:40 +0000 - dagster - DEBUG - crypto_ingestion_job - bbf23b50-1ed3-4e89-82f6-31b64bffc248 - silver_crypto - Loading file from: /opt/dagster/dagster_home/storage/18dc391b-67e1-4e16-85af-5817d007cc68/ingest_crypto_file_op/result using PickledObjectFilesystemIOManager...
+2026-02-20 22:47:40 +0000 - dagster - DEBUG - crypto_ingestion_job - bbf23b50-1ed3-4e89-82f6-31b64bffc248 - 62035 - silver_crypto - LOADED_INPUT - Loaded input "bronze_metadata" using input manager "io_manager", from output "result" of step "ingest_crypto_file_op"
+2026-02-20 22:47:40 +0000 - dagster - DEBUG - crypto_ingestion_job - bbf23b50-1ed3-4e89-82f6-31b64bffc248 - 62035 - silver_crypto - STEP_INPUT - Got input "bronze_metadata" of type "Any". (Type check passed).
+2026-02-20 22:47:40 +0000 - dagster - INFO - crypto_ingestion_job - bbf23b50-1ed3-4e89-82f6-31b64bffc248 - silver_crypto - Iniciando tratamento Silver para BTCUSDT
+2026-02-20 22:47:40 +0000 - dagster - ERROR - crypto_ingestion_job - bbf23b50-1ed3-4e89-82f6-31b64bffc248 - 62035 - silver_crypto - STEP_FAILURE - Execution of step "silver_crypto" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "silver_crypto"::
+
+ValueError: Could not find field with name symbol, case_sensitive=True
+
+Stack Trace:
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/project/crypto_candles/assets/ops.py", line 76, in silver_crypto
+    df = cast(pl.DataFrame, pl.from_arrow(table.to_arrow()))
+                                          ^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/table/__init__.py", line 2156, in to_arrow
+    return ArrowScan(
+           ^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py", line 1711, in __init__
+    self._bound_row_filter = bind(table_metadata.schema(), row_filter, case_sensitive=case_sensitive)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/expressions/visitors.py", line 209, in bind
+    return visit(expression, BindVisitor(schema, case_sensitive))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/functools.py", line 912, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/expressions/visitors.py", line 181, in _
+    return visitor.visit_unbound_predicate(predicate=obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/expressions/visitors.py", line 246, in visit_unbound_predicate
+    return predicate.bind(self.schema, case_sensitive=self.case_sensitive)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/expressions/__init__.py", line 875, in bind
+    bound_term = self.term.bind(schema, case_sensitive)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/expressions/__init__.py", line 287, in bind
+    field = schema.find_field(name_or_id=self.name, case_sensitive=case_sensitive)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/pyiceberg/schema.py", line 217, in find_field
+    raise ValueError(f"Could not find field with name {name_or_id}, case_sensitive={case_sensitive}")
+
