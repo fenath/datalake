@@ -1,30 +1,30 @@
-# 🚀 Data Lakehouse Pessoal — MinIO + Iceberg + Trino
+# 🚀 Personal Data Lakehouse — MinIO + Iceberg + Trino
 
-Projeto de **Data Lakehouse pessoal** construído para ingestão, armazenamento, processamento e análise de dados financeiros, utilizando tecnologias modernas do ecossistema open source.
+A **personal Data Lakehouse project** built for ingestion, storage, processing, and analysis of financial data using modern open-source ecosystem technologies.
 
-O ambiente integra armazenamento objeto, tabela analítica ACID, engine SQL distribuída e ferramentas de análise exploratória.
+The environment integrates object storage, ACID analytical tables, a distributed SQL engine, and exploratory analysis tools.
 
 ---
 
-## 🧱 Arquitetura
+## 🧱 Architecture
 
-Stack utilizada:
+Stack used:
 
 * **Object Storage:** MinIO
-* **Formato de Tabela Lakehouse:** Apache Iceberg (via REST Catalog)
-* **Query Engine SQL:** Trino
-* **BI / Visualização:** Metabase
-* **Processamento Distribuído:** Apache Spark (PySpark)
-* **Processamento DataFrame em memória:** Polars
-* **Ambiente de Exploração:** Jupyter Notebook
+* **Lakehouse Table Format:** Apache Iceberg (via REST Catalog)
+* **SQL Query Engine:** Trino
+* **BI / Visualization:** Metabase
+* **Distributed Processing:** Apache Spark (PySpark)
+* **In-memory DataFrame Processing:** Polars
+* **Exploration Environment:** Jupyter Notebook
 
 ---
 
-## 🏗️ Visão da Arquitetura
+## 🏗️ Architecture Overview
 
 ```text
                 +----------------------+
-                |      Metabase        |
+                |       Metabase       |
                 +----------+-----------+
                            |
                            v
@@ -34,74 +34,74 @@ Stack utilizada:
                            |
                            v
                   +------------------+
-                  | Apache Iceberg   |
-                  |  (REST Catalog)  |
+                  |  Apache Iceberg  |
+                  |   (REST Catalog) |
                   +--------+---------+
                            |
                            v
                        +--------+
-                       | MinIO  |
+                       |  MinIO |
                        +--------+
 
         +-----------------------------------+
-        | PySpark / Polars / Jupyter        |
-        | (Ingestão, Transformação, EDA)    |
+        |  PySpark / Polars / Jupyter       |
+        | (Ingestion, Transformation, EDA)  |
         +-----------------------------------+
 ```
 
 ---
 
-## 🎯 Objetivo do Projeto
+## 🎯 Project Goal
 
-Construir um **Data Lakehouse moderno** para:
+Build a **modern Data Lakehouse** to:
 
-* Centralizar dados financeiros pessoais (extratos bancários)
-* Consolidar dados operacionais de uma empresa de venda de carros
-* Testar arquitetura analítica baseada em Iceberg
-* Explorar versionamento de dados, schema evolution e time travel
-* Criar dashboards financeiros e operacionais
-
----
-
-## 📂 Domínios de Dados
-
-### 1️⃣ Financeiro Pessoal
-
-* Extratos bancários (CSV)
-* Transações categorizadas
-* Receitas e despesas
-* Consolidação mensal
-* Análises:
-
-  * Fluxo de caixa
-  * Despesas por categoria
-  * Evolução patrimonial
+* Centralize personal financial data (bank statements)
+* Consolidate operational data from a car sales business
+* Experiment with Iceberg-based analytical architecture
+* Explore data versioning, schema evolution, and time travel
+* Create financial and operational dashboards
 
 ---
 
-### 2️⃣ Empresa de Venda de Carros
+## 📂 Data Domains
 
-* Estoque de veículos
-* Histórico de vendas
-* Margem por veículo
-* Ticket médio
-* Tempo médio em estoque
-* Receita mensal
+### 1️⃣ Personal Finance
+
+* Bank statements (CSV)
+* Categorized transactions
+* Income and expenses
+* Monthly consolidation
+* Analyses:
+
+  * Cash flow
+  * Expenses by category
+  * Net worth evolution
 
 ---
 
-## 🧊 Por que Apache Iceberg?
+### 2️⃣ Car Sales Business
 
-Uso do Iceberg permite:
+* Vehicle inventory
+* Sales history
+* Margin per vehicle
+* Average ticket
+* Average time in inventory
+* Monthly revenue
 
-* ACID sobre object storage
-* Versionamento de dados
+---
+
+## 🧊 Why Apache Iceberg?
+
+Using Iceberg enables:
+
+* ACID transactions on object storage
+* Data versioning
 * Time travel queries
 * Schema evolution
-* Particionamento oculto
-* Merge / Upsert eficientes
+* Hidden partitioning
+* Efficient merge / upsert operations
 
-Exemplo de consulta time travel no Trino:
+Example time travel query in Trino:
 
 ```sql
 SELECT *
@@ -110,49 +110,49 @@ FROM vendas FOR VERSION AS OF 123456789;
 
 ---
 
-## 🔄 Fluxo de Ingestão
+## 🔄 Ingestion Flow
 
-### 🟢 Camada Bronze
+### 🟢 Bronze Layer
 
-* Dados brutos ingeridos no MinIO
-* Formato original preservado
+* Raw data ingested into MinIO
+* Original format preserved
 
-### 🟡 Camada Silver
+### 🟡 Silver Layer
 
-* Limpeza
-* Normalização
-* Conversão de tipos
-* Padronização de datas
+* Data cleaning
+* Normalization
+* Type conversion
+* Date standardization
 
-### 🔵 Camada Gold
+### 🔵 Gold Layer
 
-* Tabelas analíticas
-* Agregações
-* Métricas de negócio
+* Analytical tables
+* Aggregations
+* Business metrics
 
-Processamento realizado com:
+Processing performed using:
 
-* PySpark (grandes volumes)
-* Polars (processamento rápido local)
-* Jupyter para EDA
+* PySpark (large volumes)
+* Polars (fast local processing)
+* Jupyter for EDA
 
 ---
 
-## 📊 Consultas via Trino
+## 📊 Queries via Trino
 
-O Trino é utilizado para:
+Trino is used for:
 
-* Consultas SQL federadas
-* Integração com Metabase
-* Análises ad hoc
-* Validação de dados transformados
+* Federated SQL queries
+* Integration with Metabase
+* Ad hoc analysis
+* Validation of transformed data
 
-Exemplo:
+Example:
 
 ```sql
 SELECT 
-    date_trunc('month', data_venda) AS mes,
-    SUM(valor_venda) AS receita_total
+    date_trunc('month', data_venda) AS month,
+    SUM(valor_venda) AS total_revenue
 FROM gold.vendas
 GROUP BY 1
 ORDER BY 1;
@@ -162,24 +162,24 @@ ORDER BY 1;
 
 ## 📈 Dashboards (Metabase)
 
-Painéis criados:
+Created dashboards:
 
-### Financeiro Pessoal
+### Personal Finance
 
-* Despesas por categoria
-* Receita vs Despesa
-* Evolução mensal
+* Expenses by category
+* Income vs Expenses
+* Monthly evolution
 
-### Empresa
+### Business
 
-* Receita mensal
-* Margem por veículo
-* Giro de estoque
-* Ticket médio
+* Monthly revenue
+* Margin per vehicle
+* Inventory turnover
+* Average ticket
 
 ---
 
-## ⚙️ Estrutura do Projeto
+## ⚙️ Project Structure
 
 ```text
 datalake/
@@ -191,8 +191,8 @@ datalake/
 │   └── metabase/
 │
 ├── notebooks/
-│   ├── financeiro/
-│   └── empresa/
+│   ├── finance/
+│   └── business/
 │
 ├── jobs/
 │   ├── bronze/
@@ -206,27 +206,27 @@ datalake/
 
 ---
 
-## 🧪 Aprendizados Técnicos
+## 🧪 Technical Learnings
 
-* Implementação prática de arquitetura Lakehouse
-* Uso de Iceberg com REST catalog
-* Integração Trino + Iceberg + MinIO
-* Estratégias de particionamento
-* Evolução de schema
-* Otimização de consultas
-* Estratégias de modelagem analítica
+* Practical implementation of a Lakehouse architecture
+* Using Iceberg with a REST catalog
+* Integration between Trino + Iceberg + MinIO
+* Partitioning strategies
+* Schema evolution
+* Query optimization
+* Analytical modeling strategies
 
 ---
 
-## 🚀 Como Executar
+## 🚀 How to Run
 
-### 1️⃣ Subir infraestrutura
+### 1️⃣ Start the infrastructure
 
 ```bash
 docker-compose up -d
 ```
 
-Serviços disponíveis:
+Available services:
 
 * MinIO → [http://localhost:9000](http://localhost:9000)
 * Trino → [http://localhost:8080](http://localhost:8080)
@@ -234,15 +234,15 @@ Serviços disponíveis:
 
 ---
 
-### 2️⃣ Criar tabelas Iceberg
+### 2️⃣ Create Iceberg tables
 
-Executar scripts em `sql/ddl/` via Trino.
+Run scripts in `sql/ddl/` via Trino.
 
 ---
 
-### 3️⃣ Rodar ingestões
+### 3️⃣ Run ingestion jobs
 
-Executar notebooks ou jobs PySpark:
+Execute notebooks or PySpark jobs:
 
 ```bash
 python jobs/silver/transform_financeiro.py
@@ -250,78 +250,41 @@ python jobs/silver/transform_financeiro.py
 
 ---
 
-## 📌 Próximos Passos
+## 📌 Next Steps
 
-* [ ] Implementar CDC
-* [ ] Automação com Airflow
-* [ ] Camada de qualidade de dados
-* [ ] Testes de performance
-* [ ] Métricas de observabilidade
-* [ ] Deploy em cloud
-
----
-
-## 🧠 Motivação
-
-Projeto criado como laboratório prático para:
-
-* Dominar arquitetura Lakehouse
-* Consolidar conhecimentos em engenharia de dados
-* Aplicar conceitos modernos em um cenário real
-* Criar um ambiente analítico próprio e controlado
+* [ ] Implement CDC
+* [ ] Automation with Airflow
+* [ ] Data quality layer
+* [ ] Performance testing
+* [ ] Observability metrics
+* [ ] Cloud deployment
 
 ---
 
-## 📜 Licença
+## 🧠 Motivation
 
-Uso pessoal / educacional.
+This project was created as a practical lab to:
 
-## Baseado em: 
-- [Engenharia de Dados na Prática: Criando um Data Lake em casa!](https://www.youtube.com/watch?v=ntp-OfixCm4)
+* Master Lakehouse architecture
+* Consolidate knowledge in data engineering
+* Apply modern concepts in a real scenario
+* Build a personal and controlled analytical environment
 
-Artigos utilizados para realizar o projeto: 
+---
 
-- Streamlining Big Data with Spark: Writing and Reading Delta Lake Format on MinIO-S3 Storage - medium 
-- Setting Up Trino with Hive to Query Delta Lake Data on MinIO: A Scalable Big Data Solution
-- https://www.datalib.com.br/post/como-instalar-um-cluster-do-apache-spark-no-docker-desktop-utilizando-compose
-- https://blog.min.io/a-developers-introduction-to-apache-iceberg-using-minio/
+## 📜 License
 
+Personal / educational use.
 
-Apache spark + minio
-- trino
-- Hive
-- postgres
-- superset
+---
 
-Todos esses serviços rodam em uma docker
+## Based on
 
-conceito S3 no minio
+* [Data Engineering in Practice: Building a Data Lake at Home!](https://www.youtube.com/watch?v=ntp-OfixCm4)
 
-Criação de um datalake
+Articles used during the project:
 
-Vou tentar colocar tudo em container docker
-
-# O catálogo 'iceberg' já está configurado no spark-defaults.conf
-spark = SparkSession.builder.getOrCreate()
-
-# Criar namespace (database)
-spark.sql("CREATE NAMESPACE IF NOT EXISTS iceberg.db")
-
-# Criar tabela
-spark.sql("""
-CREATE TABLE IF NOT EXISTS iceberg.db.teste (
-  id bigint,
-  nome string
-) USING iceberg
-""")
-
-# Inserir dados de teste
-spark.sql("""
-INSERT INTO iceberg.db.teste VALUES 
-  (1, 'Alice'),
-  (2, 'Bob'),
-  (3, 'Carlos')
-""")
-
-# Consultar
-spark.sql("SELECT * FROM iceberg.db.teste").show()
+* Streamlining Big Data with Spark: Writing and Reading Delta Lake Format on MinIO-S3 Storage (Medium)
+* Setting Up Trino with Hive to Query Delta Lake Data on MinIO: A Scalable Big Data Solution
+* [https://www.datalib.com.br/post/como-instalar-um-cluster-do-apache-spark-no-docker-desktop-utilizando-compose](https://www.datalib.com.br/post/como-instalar-um-cluster-do-apache-spark-no-docker-desktop-utilizando-compose)
+* [https://blog.min.io/a-developers-introduction-to-apache-iceberg-using-minio/](https://blog.min.io/a-developers-introduction-to-apache-iceberg-using-minio/)
