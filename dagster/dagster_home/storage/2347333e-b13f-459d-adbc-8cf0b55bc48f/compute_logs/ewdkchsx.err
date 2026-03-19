@@ -1,8 +1,0 @@
-2026-03-19 01:01:20 +0000 - dagster - DEBUG - __ASSET_JOB - 2347333e-b13f-459d-adbc-8cf0b55bc48f - 13524 - LOGS_CAPTURED - Started capturing logs in process (pid: 13524).
-2026-03-19 01:01:20 +0000 - dagster - DEBUG - __ASSET_JOB - 2347333e-b13f-459d-adbc-8cf0b55bc48f - 13524 - bronze__nhl_api_calls - STEP_START - Started execution of step "bronze__nhl_api_calls".
-2026-03-19 01:01:24 +0000 - dagster - INFO - __ASSET_JOB - 2347333e-b13f-459d-adbc-8cf0b55bc48f - bronze__nhl_api_calls - Fila vazia. Nada a processar.
-2026-03-19 01:01:24 +0000 - dagster - DEBUG - __ASSET_JOB - 2347333e-b13f-459d-adbc-8cf0b55bc48f - 13524 - bronze__nhl_api_calls - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
-2026-03-19 01:01:24 +0000 - dagster - DEBUG - __ASSET_JOB - 2347333e-b13f-459d-adbc-8cf0b55bc48f - bronze__nhl_api_calls - Writing file at: /opt/dagster/dagster_home/storage/bronze/nhl_api_calls using PickledObjectFilesystemIOManager...
-2026-03-19 01:01:24 +0000 - dagster - DEBUG - __ASSET_JOB - 2347333e-b13f-459d-adbc-8cf0b55bc48f - 13524 - bronze__nhl_api_calls - ASSET_MATERIALIZATION - Materialized value bronze nhl_api_calls.
-2026-03-19 01:01:24 +0000 - dagster - DEBUG - __ASSET_JOB - 2347333e-b13f-459d-adbc-8cf0b55bc48f - 13524 - bronze__nhl_api_calls - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
-2026-03-19 01:01:24 +0000 - dagster - DEBUG - __ASSET_JOB - 2347333e-b13f-459d-adbc-8cf0b55bc48f - 13524 - bronze__nhl_api_calls - STEP_SUCCESS - Finished execution of step "bronze__nhl_api_calls" in 4.29s.
