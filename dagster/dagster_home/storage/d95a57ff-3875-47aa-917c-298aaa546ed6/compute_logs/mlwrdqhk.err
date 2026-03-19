@@ -1,0 +1,8 @@
+2026-03-19 18:54:12 +0000 - dagster - DEBUG - __ASSET_JOB - d95a57ff-3875-47aa-917c-298aaa546ed6 - 84515 - LOGS_CAPTURED - Started capturing logs in process (pid: 84515).
+2026-03-19 18:54:12 +0000 - dagster - DEBUG - __ASSET_JOB - d95a57ff-3875-47aa-917c-298aaa546ed6 - 84515 - game_schedule - STEP_START - Started execution of step "game_schedule".
+2026-03-19 18:54:13 +0000 - dagster - DEBUG - __ASSET_JOB - d95a57ff-3875-47aa-917c-298aaa546ed6 - 84515 - game_schedule - ASSET_MATERIALIZATION - Materialized value game_schedule.
+2026-03-19 18:54:13 +0000 - dagster - DEBUG - __ASSET_JOB - d95a57ff-3875-47aa-917c-298aaa546ed6 - 84515 - game_schedule - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2026-03-19 18:54:13 +0000 - dagster - DEBUG - __ASSET_JOB - d95a57ff-3875-47aa-917c-298aaa546ed6 - game_schedule - Writing file at: /opt/dagster/dagster_home/storage/game_schedule using PickledObjectFilesystemIOManager...
+2026-03-19 18:54:13 +0000 - dagster - DEBUG - __ASSET_JOB - d95a57ff-3875-47aa-917c-298aaa546ed6 - 84515 - game_schedule - ASSET_MATERIALIZATION - Materialized value game_schedule.
+2026-03-19 18:54:13 +0000 - dagster - DEBUG - __ASSET_JOB - d95a57ff-3875-47aa-917c-298aaa546ed6 - 84515 - game_schedule - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2026-03-19 18:54:13 +0000 - dagster - DEBUG - __ASSET_JOB - d95a57ff-3875-47aa-917c-298aaa546ed6 - 84515 - game_schedule - STEP_SUCCESS - Finished execution of step "game_schedule" in 1.21s.

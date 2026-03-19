@@ -1,0 +1,25 @@
+2026-03-19 21:56:57 +0000 - dagster - DEBUG - __ASSET_JOB - 352fdfbd-9114-4584-b433-c6072207ef92 - 323316 - LOGS_CAPTURED - Started capturing logs in process (pid: 323316).
+2026-03-19 21:56:57 +0000 - dagster - DEBUG - __ASSET_JOB - 352fdfbd-9114-4584-b433-c6072207ef92 - 323316 - bronze__reload_game_info__reload_game_info - STEP_START - Started execution of step "bronze__reload_game_info__reload_game_info".
+2026-03-19 21:57:02 +0000 - dagster - ERROR - __ASSET_JOB - 352fdfbd-9114-4584-b433-c6072207ef92 - 323316 - bronze__reload_game_info__reload_game_info - STEP_FAILURE - Execution of step "bronze__reload_game_info__reload_game_info" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "bronze__reload_game_info__reload_game_info"::
+
+_duckdb.BinderException: Binder Error: Referenced column "game_id" not found in FROM clause!
+Candidate bindings: "request_id", "endpoint"
+
+Stack Trace:
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/project/nhl/assets/nhl_games_sync.py", line 34, in reload_game_info
+    res = con.sql(
+          ^^^^^^^^
+

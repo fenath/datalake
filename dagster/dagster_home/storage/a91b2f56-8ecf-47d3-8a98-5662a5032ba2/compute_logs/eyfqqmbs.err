@@ -1,0 +1,23 @@
+2026-03-19 18:35:07 +0000 - dagster - DEBUG - __ASSET_JOB - a91b2f56-8ecf-47d3-8a98-5662a5032ba2 - 51160 - LOGS_CAPTURED - Started capturing logs in process (pid: 51160).
+2026-03-19 18:35:07 +0000 - dagster - DEBUG - __ASSET_JOB - a91b2f56-8ecf-47d3-8a98-5662a5032ba2 - 51160 - game_schedule - STEP_START - Started execution of step "game_schedule".
+2026-03-19 18:35:08 +0000 - dagster - ERROR - __ASSET_JOB - a91b2f56-8ecf-47d3-8a98-5662a5032ba2 - 51160 - game_schedule - STEP_FAILURE - Execution of step "game_schedule" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "game_schedule"::
+
+_duckdb.BinderException: Binder Error: table nhl_games has 16 columns but 15 values were supplied
+
+Stack Trace:
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/project/nhl/assets/nhl_games.py", line 69, in game_schedule
+    con.execute(query)
+

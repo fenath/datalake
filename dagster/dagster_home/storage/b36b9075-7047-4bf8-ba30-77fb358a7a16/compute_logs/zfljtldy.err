@@ -1,0 +1,7 @@
+2026-03-19 22:23:08 +0000 - dagster - DEBUG - __ASSET_JOB - b36b9075-7047-4bf8-ba30-77fb358a7a16 - 369029 - LOGS_CAPTURED - Started capturing logs in process (pid: 369029).
+2026-03-19 22:23:08 +0000 - dagster - DEBUG - __ASSET_JOB - b36b9075-7047-4bf8-ba30-77fb358a7a16 - 369029 - silver__sync_nhl_game_states - STEP_START - Started execution of step "silver__sync_nhl_game_states".
+2026-03-19 22:23:10 +0000 - dagster - DEBUG - __ASSET_JOB - b36b9075-7047-4bf8-ba30-77fb358a7a16 - 369029 - silver__sync_nhl_game_states - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2026-03-19 22:23:10 +0000 - dagster - DEBUG - __ASSET_JOB - b36b9075-7047-4bf8-ba30-77fb358a7a16 - silver__sync_nhl_game_states - Writing file at: /opt/dagster/dagster_home/storage/silver/sync_nhl_game_states using PickledObjectFilesystemIOManager...
+2026-03-19 22:23:11 +0000 - dagster - DEBUG - __ASSET_JOB - b36b9075-7047-4bf8-ba30-77fb358a7a16 - 369029 - silver__sync_nhl_game_states - ASSET_MATERIALIZATION - Materialized value silver sync_nhl_game_states.
+2026-03-19 22:23:11 +0000 - dagster - DEBUG - __ASSET_JOB - b36b9075-7047-4bf8-ba30-77fb358a7a16 - 369029 - silver__sync_nhl_game_states - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2026-03-19 22:23:11 +0000 - dagster - DEBUG - __ASSET_JOB - b36b9075-7047-4bf8-ba30-77fb358a7a16 - 369029 - silver__sync_nhl_game_states - STEP_SUCCESS - Finished execution of step "silver__sync_nhl_game_states" in 2.75s.

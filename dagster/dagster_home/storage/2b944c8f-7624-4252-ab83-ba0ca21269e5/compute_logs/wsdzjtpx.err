@@ -1,0 +1,24 @@
+2026-03-19 22:07:23 +0000 - dagster - DEBUG - __ASSET_JOB - 2b944c8f-7624-4252-ab83-ba0ca21269e5 - 342441 - LOGS_CAPTURED - Started capturing logs in process (pid: 342441).
+2026-03-19 22:07:23 +0000 - dagster - DEBUG - __ASSET_JOB - 2b944c8f-7624-4252-ab83-ba0ca21269e5 - 342441 - silver__sync_nhl_game_states - STEP_START - Started execution of step "silver__sync_nhl_game_states".
+2026-03-19 22:07:25 +0000 - dagster - ERROR - __ASSET_JOB - 2b944c8f-7624-4252-ab83-ba0ca21269e5 - 342441 - silver__sync_nhl_game_states - STEP_FAILURE - Execution of step "silver__sync_nhl_game_states" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "silver__sync_nhl_game_states"::
+
+_duckdb.NotImplementedException: Not implemented Error: Database type "iceberg" does not support MERGE INTO or ON CONFLICT
+
+Stack Trace:
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/project/nhl/assets/nhl_games_sync.py", line 93, in sync_nhl_game_states
+    res = con.execute(query).fetchall()
+          ^^^^^^^^^^^^^^^^^^
+

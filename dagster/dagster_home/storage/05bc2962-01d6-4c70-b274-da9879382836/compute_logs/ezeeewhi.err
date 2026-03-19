@@ -1,0 +1,8 @@
+2026-03-18 18:00:47 +0000 - dagster - DEBUG - __ASSET_JOB - 05bc2962-01d6-4c70-b274-da9879382836 - 24236 - LOGS_CAPTURED - Started capturing logs in process (pid: 24236).
+2026-03-18 18:00:47 +0000 - dagster - DEBUG - __ASSET_JOB - 05bc2962-01d6-4c70-b274-da9879382836 - 24236 - parse_api - STEP_START - Started execution of step "parse_api".
+2026-03-18 18:00:50 +0000 - dagster - DEBUG - __ASSET_JOB - 05bc2962-01d6-4c70-b274-da9879382836 - 24236 - parse_api - ASSET_MATERIALIZATION - Materialized value parse_api.
+2026-03-18 18:00:50 +0000 - dagster - DEBUG - __ASSET_JOB - 05bc2962-01d6-4c70-b274-da9879382836 - 24236 - parse_api - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2026-03-18 18:00:50 +0000 - dagster - DEBUG - __ASSET_JOB - 05bc2962-01d6-4c70-b274-da9879382836 - parse_api - Writing file at: /opt/dagster/dagster_home/storage/parse_api using PickledObjectFilesystemIOManager...
+2026-03-18 18:00:50 +0000 - dagster - DEBUG - __ASSET_JOB - 05bc2962-01d6-4c70-b274-da9879382836 - 24236 - parse_api - ASSET_MATERIALIZATION - Materialized value parse_api.
+2026-03-18 18:00:50 +0000 - dagster - DEBUG - __ASSET_JOB - 05bc2962-01d6-4c70-b274-da9879382836 - 24236 - parse_api - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2026-03-18 18:00:50 +0000 - dagster - DEBUG - __ASSET_JOB - 05bc2962-01d6-4c70-b274-da9879382836 - 24236 - parse_api - STEP_SUCCESS - Finished execution of step "parse_api" in 2.96s.

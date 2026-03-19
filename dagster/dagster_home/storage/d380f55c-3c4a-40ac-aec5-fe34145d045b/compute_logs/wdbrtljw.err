@@ -1,0 +1,26 @@
+2026-03-19 18:30:50 +0000 - dagster - DEBUG - __ASSET_JOB - d380f55c-3c4a-40ac-aec5-fe34145d045b - 42782 - LOGS_CAPTURED - Started capturing logs in process (pid: 42782).
+2026-03-19 18:30:51 +0000 - dagster - DEBUG - __ASSET_JOB - d380f55c-3c4a-40ac-aec5-fe34145d045b - 42782 - game_schedule - STEP_START - Started execution of step "game_schedule".
+2026-03-19 18:30:53 +0000 - dagster - ERROR - __ASSET_JOB - d380f55c-3c4a-40ac-aec5-fe34145d045b - 42782 - game_schedule - STEP_FAILURE - Execution of step "game_schedule" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "game_schedule"::
+
+_duckdb.BinderException: Binder Error: UNNEST() can only be applied to lists, structs and NULL, not JSON
+
+LINE 21:                 unnest(resp_json->'$.gameWeek') as week
+                         ^
+
+Stack Trace:
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/.venv/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/dagster/app/project/nhl/assets/nhl_games.py", line 69, in game_schedule
+    con.execute(query)
+
