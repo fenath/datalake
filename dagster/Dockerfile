@@ -2,6 +2,7 @@ FROM ghcr.io/astral-sh/uv:python3.11-bookworm
 
 # caminhos separados
 ENV DAGSTER_HOME=/opt/dagster/dagster_home
+ENV DBT_PROFILES_DIR=/opt/dagster/app/dbt
 WORKDIR /opt/dagster/app
 
 RUN mkdir -p $DAGSTER_HOME

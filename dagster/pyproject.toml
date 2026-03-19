@@ -6,8 +6,14 @@ readme = "README.md"
 requires-python = "==3.12.*"
 dependencies = [
     "boto3>=1.42.49",
+    "duckdb",
+    "dbt-core",
+    "dbt-trino",
+    "dbt-duckdb",
     "dagster",
     "dagster-graphql",
+    "dagster-duckdb",
+    "dagster-dbt",
     "dagster-webserver",
     "polars",
     "pandas",
