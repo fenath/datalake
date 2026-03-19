@@ -1,3 +1,11 @@
 
 *.db
 *.duckdb
+
+# Ignorar toda a pasta de runtime do Dagster
+dagster/dagster_home/storage/
+dagster/dagster_home/history/
+dagster/dagster_home/compute_logs/
+*.out
+*.err
+*.complete
