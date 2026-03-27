@@ -5,6 +5,8 @@
 __pycache__
 *.pyc
 
+*.env
+
 # Ignorar toda a pasta de runtime do Dagster
 dagster/dagster_home/storage/
 dagster/dagster_home/history/
