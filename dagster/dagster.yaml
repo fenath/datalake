@@ -1,0 +1,34 @@
+# Localização: ./dagster/dagster_home/dagster.yaml
+
+storage:
+  postgres:
+    username: iceberg
+    password: iceberg
+    hostname: db           # Nome do serviço no docker-compose
+    db_name: dagster_metadata      # Se preferir usar o mesmo banco, ou mude para 'dagster_metadata'
+    port: 5432
+
+run_retention:
+  max_age_days: 7          # Crucial para seu cron de 1 min não explodir o disco
+
+event_log_storage:
+  postgres:
+    username: iceberg
+    password: iceberg
+    hostname: db
+    db_name: dagster_metadata
+    port: 5432
+
+schedule_storage:
+  postgres:
+    username: iceberg
+    password: iceberg
+    hostname: db
+    db_name: dagster_metadata
+    port: 5432
+
+# Configuração para evitar que os logs de console (stdout) entupam o WSL
+compute_logs:
+  module: dagster.core.storage.local_compute_log_manager
+  config:
+    base_dir: /opt/dagster/dagster_home/storage/compute_logs

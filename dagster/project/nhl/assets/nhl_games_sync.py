@@ -119,3 +119,16 @@ def sync_nhl_game_states(context: dg.AssetExecutionContext,
             "rows_merged": check,
             "status": "success" if check > 0 else "no_updates"
         })
+
+@dg.asset(
+        description="Busca jogos finalizados que ainda não possuem pbp e insere na fila",
+        key_prefix=["bronze"], 
+        name="request_for_pbps"
+        )
+def request_for_pbps(context: dg.AssetExecutionContext,
+      duckdb: IcebergDuckDBResource
+      ):
+    with duckdb.get_connection() as con:
+        duckdb.post_connect(con)
+        query = """"""
+

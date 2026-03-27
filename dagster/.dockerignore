@@ -1,0 +1,8 @@
+# .dockerignore
+.venv/
+.git/
+__pycache__/
+*.db
+*.parquet
+*.csv
+dagster/dagster_home/storage/

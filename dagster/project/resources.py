@@ -1,3 +1,4 @@
+from contextlib import contextmanager
 from dagster import resource
 from dagster_duckdb import DuckDBResource
 from pyiceberg.catalog import load_catalog
@@ -30,6 +31,9 @@ def s3_client():
 
 class IcebergDuckDBResource(DuckDBResource):
     def post_connect(self, conn):
+        pass
+
+    def _post_connect(self, conn):
         logger = logging.getLogger("duck")
         logger.info('post-connect ativado')
         # Este código roda sempre que um asset pedir a conexão
@@ -57,6 +61,12 @@ class IcebergDuckDBResource(DuckDBResource):
                 ENDPOINT 'http://rest:8181'
             );
         """)
+
+    @contextmanager
+    def get_connection(self):
+        with super().get_connection() as con:
+            self._post_connect(con)
+            yield con
 
 duckdb = IcebergDuckDBResource(database="/tmp/db.duckdb")
 

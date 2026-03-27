@@ -197,6 +197,10 @@ def play_by_play(context: dg.AssetExecutionContext,
 
         check = con.sql("SELECT COUNT(*) FROM tmp_pbp_transformed").fetchone()[0]
 
+        if check == 0:
+            context.log.info(f"Sem eventos para ingestar.")
+            return
+
         if check > 0:
             con.execute("INSERT INTO dev.silver.nhl_play_by_play SELECT * FROM tmp_pbp_transformed")
             # Registro do Batch para Auditoria
@@ -229,6 +233,11 @@ def play_by_play(context: dg.AssetExecutionContext,
                     ('{current_batch_id}', 'total_games', '{unique_games}'),
                     ('{current_batch_id}', 'execution_mode', 'duckdb_native_append')
             """)
+
+            context.add_output_metadata({
+                "eventos": check,
+                "games": unique_games
+            })
 
             context.log.info(f"Sucesso: {check} eventos de {unique_games} jogos apendados na Silver.")
 

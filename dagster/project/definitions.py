@@ -1,4 +1,4 @@
-from dagster import Definitions, AutomationPolicy, AssetExecutionContext
+from dagster import Definitions, AssetExecutionContext, AutoMaterializePolicy
 from dagster_dbt import DbtProject, DbtCliResource, dbt_assets, DagsterDbtTranslator
 
 from .bronze import raw_excel
@@ -11,10 +11,11 @@ from .crypto_candles.assets.sensors import minio_csv_sensor
 from .crypto_candles.assets.ops import crypto_ingestion_job, log_job
 
 from .nhl.assets import nhl_assets
+from .assets import all_assets
 
 from pathlib import Path
 
-auto_materialize_policy = AutomationPolicy.eager()
+auto_materialize_policy = AutoMaterializePolicy.eager()
 class MyCustomTranslator(DagsterDbtTranslator):
     def get_automation_policy(self, dbt_resource_props):
         return auto_materialize_policy
@@ -35,6 +36,7 @@ def nhl_dbt_assets(context: AssetExecutionContext, dbt: DbtCliResource):
 
 defs = Definitions(
     assets=[
+        *all_assets,
         raw_excel, 
         carros_astro,
         ensure_ingestion_table,
