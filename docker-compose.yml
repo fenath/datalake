@@ -135,15 +135,20 @@ services:
       - iceberg_net
     volumes:
       - pgdata:/var/lib/postgresql/data
+    healthcheck:                                          # <- ADICIONAR
+      test: ["CMD-SHELL", "pg_isready -U iceberg -d dagster_metadata"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
 
   dagster-web:
     build:
       context: ./dagster
+    image: my-dagster:latest
     container_name: dagster-web
     command:
-      - uv
-      - run
-      - dagster-webserver
+      - /opt/dagster/app/.venv/bin/dagster-webserver
       - -h
       - 0.0.0.0
       - -p
@@ -158,14 +163,13 @@ services:
       - ./dagster/dbt:/opt/dagster/app/dbt
     networks:
       - iceberg_net
+    depends_on:
+      - db
     restart: unless-stopped
   dagster-daemon:
-    build:
-      context: ./dagster
+    image: my-dagster:latest
     entrypoint:
-      - uv
-      - run
-      - dagster-daemon
+      - /opt/dagster/app/.venv/bin/dagster-daemon
       - run
     container_name: dagster-daemon
     volumes:
@@ -174,6 +178,8 @@ services:
       - ./dagster/dbt:/opt/dagster/app/dbt
     networks:
       - iceberg_net
+    depends_on:
+      - db
     restart: unless-stopped
 
 

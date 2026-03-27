@@ -1,6 +1,7 @@
 
 *.db
 *.duckdb
+*.log
 
 # Ignorar toda a pasta de runtime do Dagster
 dagster/dagster_home/storage/
