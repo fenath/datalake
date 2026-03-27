@@ -1,0 +1,13 @@
+[project]
+name = "luigi-container"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "duckdb>=1.5.1",
+    "duckdb-cli>=1.5.0",
+    "luigi[toml]>=3.8.0",
+    "pandas>=3.0.1",
+    "polars>=1.39.3",
+]

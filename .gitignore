@@ -2,6 +2,8 @@
 *.db
 *.duckdb
 *.log
+__pycache__
+*.pyc
 
 # Ignorar toda a pasta de runtime do Dagster
 dagster/dagster_home/storage/
