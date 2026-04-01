@@ -1,0 +1,14 @@
+[project]
+name = "luigi-container"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "airflow-provider-duckdb>=0.2.0",
+    "duckdb>=1.5.1",
+    "duckdb-cli>=1.5.0",
+    "pandas>=3.0.1",
+    "polars>=1.39.3",
+    "pyarrow>=23.0.1",
+]

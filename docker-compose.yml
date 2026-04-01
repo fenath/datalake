@@ -135,53 +135,28 @@ services:
       - iceberg_net
     volumes:
       - pgdata:/var/lib/postgresql/data
-    healthcheck:                                          # <- ADICIONAR
-      test: ["CMD-SHELL", "pg_isready -U iceberg -d dagster_metadata"]
-      interval: 5s
-      timeout: 5s
-      retries: 10
-      start_period: 10s
 
-  dagster-web:
-    build:
-      context: ./dagster
-    image: my-dagster:latest
-    container_name: dagster-web
-    command:
-      - /opt/dagster/app/.venv/bin/dagster-webserver
-      - -h
-      - 0.0.0.0
-      - -p
-      - "3000"
-      - -w
-      - /opt/dagster/app/workspace.yaml
+  airflow:
+    build: airflow
+    # Força o nome da imagem para ser sempre o mesmo e sobrescrever a anterior
+    image: airflow-fer:latest
+    container_name: airflow
     ports:
-      - "3001:3000"
+      - "8082:8080"
     volumes:
-      - ./dagster/project:/opt/dagster/app/project
-      - ./dagster/dagster_home:/opt/dagster/dagster_home
-      - ./dagster/dbt:/opt/dagster/app/dbt
+      # Linka sua pasta local 'airflow' (onde está o DB e logs) com o container
+      - ./airflow/airflow_home:/app/airflow
     networks:
       - iceberg_net
-    depends_on:
-      - db
-    restart: unless-stopped
-  dagster-daemon:
-    image: my-dagster:latest
-    entrypoint:
-      - /opt/dagster/app/.venv/bin/dagster-daemon
-      - run
-    container_name: dagster-daemon
-    volumes:
-      - ./dagster/project:/opt/dagster/app/project
-      - ./dagster/dagster_home:/opt/dagster/dagster_home
-      - ./dagster/dbt:/opt/dagster/app/dbt
-    networks:
-      - iceberg_net
-    depends_on:
-      - db
-    restart: unless-stopped
-
+    environment:
+      - AIRFLOW_HOME=/app/airflow
+      - PYTHONUNBUFFERED=1
+      - AIRFLOW__CORE__DAGS_FOLDER=/app/airflow/dags
+      - MINIO__URL=minio:9000
+      - MINIO__USERNAME=minioadmin
+      - MINIO__PASSOWRD=minioadmin
+      - REST__URL=rest:8181
+    restart: always
 
 networks:
   iceberg_net:
